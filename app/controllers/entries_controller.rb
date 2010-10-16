@@ -5,7 +5,7 @@ class EntriesController < ApplicationController
   before_filter :authenticate_user!, :only => :index
 
   def index
-    application = current_user.applications.find(params[:id])
+    application = current_user.applications.find(params[:application_id])
     @entries = application.entries.order(:created_at).all
     @facilities = @entries.collect(&:facility).uniq
   end
