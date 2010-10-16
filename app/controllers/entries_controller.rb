@@ -1,5 +1,7 @@
 class EntriesController < ApplicationController
   ssl_required :create
+  
+  skip_before_filter :verify_authenticity_token, :only => :create
 
   def index
     @entries = Entry.all
