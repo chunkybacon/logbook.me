@@ -1,0 +1,19 @@
+%select#severity_selector
+  %option{:value => "all"} All
+  = Entry::SEVERITY_TYPES.each do |severity|
+    %option{:value => "#{severity}"}= severity
+  end
+
+%select#facility_selector
+  %option{:value => "all"} All
+  = @facilities.each do |facility|
+    %option{:value => "#{facility}"}= facility
+  end
+
+%table.entries
+  %tr
+    %thead
+      %th Severity
+      %th Facility
+      %th Payload
+  = render @entries
