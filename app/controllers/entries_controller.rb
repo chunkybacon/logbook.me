@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
     @application = Application.find_by_api_key(params[:api_key])
     if @application
       params[:entries].values.each do |entry|
-        @application.entries.create!(entry)
+        Entry.create!(entry, :application_id => @application.id)
       end
       head :ok
     else
