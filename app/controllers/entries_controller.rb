@@ -9,6 +9,7 @@ class EntriesController < ApplicationController
   end
 
   def create
+    logger.info(request.protocol)
     @application = Application.find_by_api_key(params[:api_key])
     if @application
       params[:entries].each do |entry|
