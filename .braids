@@ -1,0 +1,8 @@
+--- 
+lib/generators/haml: 
+  branch: master
+  remote: braid/lib/generators/haml
+  revision: 285c910f183e514da2a535039b7f431390e2171b
+  squashed: true
+  type: git
+  url: git://github.com/psynix/rails3_haml_scaffold_generator.git

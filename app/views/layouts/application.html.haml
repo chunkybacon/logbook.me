@@ -10,14 +10,22 @@
       #header
         %h1
           %a{:href => "/"} LogBook
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
         #user-navigation
           %ul.wat-cf
-            %li
-              %a{:href => "#"}= t("web-app-theme.profile", :default => "Profile")
-            %li
-              %a{:href => "#"}= t("web-app-theme.settings", :default => "Settings")
-            %li
-              %a.logout{:href => "/logout"}= t("web-app-theme.logout", :default => "Logout")
+            - if current_user
+              %li
+                %a{:href => "#"}= t("web-app-theme.profile", :default => "Profile")
+              %li
+                %a{:href => "#"}= t("web-app-theme.settings", :default => "Settings")
+              %li
+                = link_to(t("web-app-theme.logout", :default => "Logout"), destroy_user_session_path)
+            - else
+              %li
+                = link_to_unless_current(t('signup', :default => "Signup"), new_user_registration_path)
+              %li
+                = link_to_unless_current(t("web-app-theme.login", :default => "Login"), new_user_session_path)
         #main-navigation
           %ul.wat-cf
       #wrapper.wat-cf
