@@ -125,6 +125,7 @@ GEM
     tzinfo (0.3.23)
     unicorn (1.1.4)
       rack
+    uuidtools (2.1.1)
     warden (0.10.7)
       rack (>= 1.0.0)
 
@@ -144,5 +145,6 @@ DEPENDENCIES
   simple_form!
   sqlite3-ruby
   unicorn
+  uuidtools
   web-app-theme!
   will_paginate!
