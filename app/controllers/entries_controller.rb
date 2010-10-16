@@ -1,10 +1,12 @@
 class EntriesController < ApplicationController
-  ssl_required :create
-  
+  ssl_required :create  
   skip_before_filter :verify_authenticity_token, :only => :create
 
+  before_filter :authenticate_user!, :only => :index
+
   def index
-    @entries = Entry.all
+    application = current_user.applications.find(params[:id])
+    @entries = application.entries.order(:created_at).all
     @facilities = @entries.collect(&:facility).uniq
   end
 
