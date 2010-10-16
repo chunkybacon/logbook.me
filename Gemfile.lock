@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/indirect/jquery-rails.git
+  revision: e0767e318a54f4bbe46b4e2ee0f35ef2f2fb2c27
+  tag: v0.2.3
+  specs:
+    jquery-rails (0.2.3)
+      rails (~> 3.0)
+
+GIT
   remote: git://github.com/josevalim/inherited_resources.git
   revision: 2707d5e8687a533f5bfae7ca89796e8e9d6fe9b4
   specs:
@@ -137,6 +145,7 @@ DEPENDENCIES
   haml
   hpricot
   inherited_resources!
+  jquery-rails!
   pg
   rails (= 3.0.1)
   ruby_parser

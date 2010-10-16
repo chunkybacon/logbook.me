@@ -29,6 +29,7 @@ gem "simple_form", :git => "git://github.com/plataformatec/simple_form.git"
 gem "will_paginate", :git => "git://github.com/mislav/will_paginate.git", :branch =>"rails3"
 gem "show_for", :git => "git://github.com/plataformatec/show_for.git"
 gem "haml"
+gem "jquery-rails", :git => "git://github.com/indirect/jquery-rails.git", :tag => "v0.2.3"
 
 group :development do
   gem 'hpricot'
