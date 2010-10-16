@@ -3,13 +3,11 @@ class SitesController < ApplicationController
   
   def index
     if current_user
-      render :dashboard
+      @applications = current_user.applications
+      render 'applications/index'
     else
       render :index
     end
     return
-  end
-
-  def dashboard
   end
 end

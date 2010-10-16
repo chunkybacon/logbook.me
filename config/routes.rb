@@ -1,18 +1,14 @@
 Logbook::Application.routes.draw do
-  resource  :site, :only => :index do
-    member do
-      get 'dashboard'
-    end
-  end
 
+  resource  :site, :only => :index
+  
   devise_for :users
+
   resources :applications do
-   resources :entries, :only => :index
+    resources :entries, :only => :index
   end
 
   resources :entries, :except => :index
-
-  match "dashboard" => "sites#dashboard"
   
   root :to => "sites#index"
 end
