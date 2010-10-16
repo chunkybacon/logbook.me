@@ -30,8 +30,7 @@ gem "will_paginate", :git => "git://github.com/mislav/will_paginate.git", :branc
 gem "show_for", :git => "git://github.com/plataformatec/show_for.git"
 gem "haml"
 gem "jquery-rails", :git => "git://github.com/indirect/jquery-rails.git", :tag => "v0.2.3"
-gem "uuidtools", :require => "UUIDTools"
-gem "faker"
+gem "uuidtools"
 
 group :development do
   gem 'hpricot'
@@ -45,4 +44,5 @@ end
 group :development, :test do
   #   gem 'webrat'
   gem 'web-app-theme', :git => 'git://github.com/pilu/web-app-theme.git'
+  gem "faker"
 end
