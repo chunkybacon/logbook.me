@@ -1,19 +1,23 @@
-%select#severity_selector
-  %option{:value => "all"} All
-  = Entry::SEVERITY_TYPES.each do |severity|
-    %option{:value => "#{severity}"}= severity
-  end
+%div#filters
+  %span Filters:
+  %label{:for => "severity_selector"} Severity:
+  %select#severity_selector{:name => "severity_selector"}
+    %option{:value => "all"} All
+    = Entry::SEVERITY_TYPES.each do |severity|
+      %option{:value => "#{severity}"}= severity
+    end
+  %label{:for => "facility_selector"} Facility:
+  %select#facility_selector{:name => "facility_selector"}
+    %option{:value => "all"} All
+    = @facilities.each do |facility|
+      %option{:value => "#{facility}"}= facility
+    end
 
-%select#facility_selector
-  %option{:value => "all"} All
-  = @facilities.each do |facility|
-    %option{:value => "#{facility}"}= facility
-  end
-
-%table.entries
-  %tr
-    %thead
+%table#entries
+  %thead
+    %tr
       %th Severity
       %th Facility
       %th Payload
-  = render @entries
+  %tbody
+    = render @entries
