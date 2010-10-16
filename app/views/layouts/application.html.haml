@@ -10,8 +10,6 @@
       #header
         %h1
           %a{:href => "/"} LogBook
-        - flash.each do |name, msg|
-          = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
         #user-navigation
           %ul.wat-cf
             - if current_user
