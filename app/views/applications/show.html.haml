@@ -1,0 +1,12 @@
+%h1= t '.title'
+%p
+  = link_to t('back'), applications_path
+  = link_to t('edit'), edit_application_path(@application)
+
+%dl
+  %dt= Application.human_attribute_name :user
+  %dd= @application.user.email
+  %dt= Application.human_attribute_name :name
+  %dd= @application.name
+  %dt= Application.human_attribute_name :api_key
+  %dd= @application.api_key
