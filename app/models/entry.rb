@@ -3,7 +3,7 @@ class Entry < ActiveRecord::Base
   belongs_to :application
 
   # Attributes
-  attr_accessible :severity, :facility, :payload
+  attr_accessible :severity, :facility, :payload, :timestamp
 
   # Constants
   SEVERITY_TYPES = ["fatal", "error", "warn", "info", "debug"]

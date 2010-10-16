@@ -5,16 +5,15 @@ class EntriesController < ApplicationController
   before_filter :authenticate_user!, :only => :index
 
   def index
-    application = current_user.applications.find(params[:id])
+    application = current_user.applications.find(params[:application_id])
     @entries = application.entries.order(:created_at).all
     @facilities = @entries.collect(&:facility).uniq
   end
 
   def create
-    logger.info(request.protocol)
     @application = Application.find_by_api_key(params[:api_key])
     if @application
-      params[:entries].each do |entry|
+      params[:entries].values.each do |entry|
         @application.entries.create!(entry)
       end
       head :ok

@@ -3,6 +3,8 @@
     = entry.severity
   %td.facility
     = entry.facility
+  %td.timestamp
+    = entry.timestamp
   %td.payload_body
     %div.payload_head= truncate(entry.payload, :length => 80)
-    %div.payload.hidden= entry.payload.gsub(",", ",<br />").html_safe + "<br />" + entry.timestamp
+    %div.payload.hidden= entry.payload.gsub(",", ",<br />").html_safe

@@ -5,7 +5,7 @@ describe EntriesController do
     let(:application) { Application.make }
 
     def do_post(params = {})
-      post :create, { :api_key => application.api_key, :entries => [] }.merge(params)
+      post :create, { :api_key => application.api_key, :entries => {} }.merge(params)
     end
 
     it 'should find the app by api key' do
@@ -19,7 +19,7 @@ describe EntriesController do
     end
 
     it 'should be able to create multiple entries from parameters' do
-      expect { do_post :entries => [Entry.plan] }.
+      expect { do_post :entries => { 0 => Entry.plan } }.
         to change { application.entries.count }.by(1)
     end
   end
