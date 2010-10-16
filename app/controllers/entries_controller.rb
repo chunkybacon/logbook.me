@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  ssl_required :create
 
   def index
     @entries = Entry.all

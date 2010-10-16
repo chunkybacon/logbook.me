@@ -36,3 +36,5 @@ Logbook::Application.configure do
   # Devise mailer
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
+
+SslRequirement.disable_ssl_check = true

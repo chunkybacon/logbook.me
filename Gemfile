@@ -31,6 +31,7 @@ gem "show_for", :git => "git://github.com/plataformatec/show_for.git"
 gem "haml"
 gem "jquery-rails", :git => "git://github.com/indirect/jquery-rails.git", :tag => "v0.2.3"
 gem "uuidtools"
+gem "bartt-ssl_requirement", :require => "ssl_requirement"
 
 group :development do
   gem 'hpricot'
