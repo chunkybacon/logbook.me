@@ -45,6 +45,6 @@ module Logbook
     end
 
     # Javascript settings
-    config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery-ui.min rails application)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery-ui.min rails)
   end
 end
