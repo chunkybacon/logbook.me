@@ -5,4 +5,4 @@
     = entry.facility
   %td.payload_body
     %div.payload_head= truncate(entry.payload, :length => 80)
-    %div.payload.hidden= entry.payload.gsub(",", ",<br />").html_safe
+    %div.payload.hidden= entry.payload.gsub(",", ",<br />").html_safe + "<br />" + entry.timestamp
