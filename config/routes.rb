@@ -1,12 +1,14 @@
 Logbook::Application.routes.draw do
-  get "site/index"
 
+  resource  :site, :only => :index
+  
   devise_for :users
+
   resources :applications do
-   resources :entries, :only => :index
+    resources :entries, :only => :index
   end
 
   resources :entries, :except => :index
-
-  root :to => "site#index"
+  
+  root :to => "sites#index"
 end
