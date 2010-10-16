@@ -71,6 +71,7 @@ GEM
     activesupport (3.0.1)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    bartt-ssl_requirement (1.2.3)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
     capistrano (2.5.19)
@@ -156,6 +157,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bartt-ssl_requirement
   capistrano
   devise
   faker
