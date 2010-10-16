@@ -12,7 +12,7 @@ development:
 
 test:
   <<: *defaults
-  database: logbook_test
+  database: logbookI_test
 
 # set these environment variables on your prod server
 production:
