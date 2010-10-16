@@ -31,6 +31,7 @@ gem "haml"
 group :development do
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'sqlite3-ruby'
 end
 
 # Bundle gems for the local environment. Make sure to
