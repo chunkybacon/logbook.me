@@ -14,6 +14,12 @@ GIT
     will_paginate (3.0.pre3)
 
 GIT
+  remote: git://github.com/pilu/web-app-theme.git
+  revision: 57e0db4d1cb39a8328bacb80af54a61c8c1a1f0d
+  specs:
+    web-app-theme (0.6.2)
+
+GIT
   remote: git://github.com/plataformatec/show_for.git
   revision: 4e5ebb082ccd4928d06696083f0f45a620906f1e
   specs:
@@ -138,4 +144,5 @@ DEPENDENCIES
   simple_form!
   sqlite3-ruby
   unicorn
+  web-app-theme!
   will_paginate!
