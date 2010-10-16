@@ -28,6 +28,11 @@ gem "will_paginate", :git => "git://github.com/mislav/will_paginate.git", :branc
 gem "show_for", :git => "git://github.com/plataformatec/show_for.git"
 gem "haml"
 
+group :development do
+  gem 'hpricot'
+  gem 'ruby_parser'
+end
+
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:

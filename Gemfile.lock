@@ -73,6 +73,7 @@ GEM
     haml (3.0.21)
     has_scope (0.5.0)
     highline (1.6.1)
+    hpricot (0.8.2)
     i18n (0.4.1)
     mail (2.2.7)
       activesupport (>= 2.3.6)
@@ -108,6 +109,9 @@ GEM
       thor (~> 0.14.0)
     rake (0.8.7)
     responders (0.6.2)
+    ruby_parser (2.0.5)
+      sexp_processor (~> 3.0)
+    sexp_processor (3.0.5)
     thor (0.14.3)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
@@ -124,9 +128,11 @@ DEPENDENCIES
   capistrano
   devise
   haml
+  hpricot
   inherited_resources!
   pg
   rails (= 3.0.1)
+  ruby_parser
   show_for!
   simple_form!
   unicorn
