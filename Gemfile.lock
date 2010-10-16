@@ -22,6 +22,16 @@ GIT
     will_paginate (3.0.pre3)
 
 GIT
+  remote: git://github.com/mongoid/mongoid.git
+  revision: b1080cda54d32d3bc18e008867b33b82d64fb55b
+  specs:
+    mongoid (2.0.0.beta.19)
+      activemodel (~> 3.0)
+      mongo (~> 1.1)
+      tzinfo (~> 0.3.22)
+      will_paginate (~> 3.0.pre)
+
+GIT
   remote: git://github.com/pilu/web-app-theme.git
   revision: 57e0db4d1cb39a8328bacb80af54a61c8c1a1f0d
   specs:
@@ -73,6 +83,7 @@ GEM
       activesupport (~> 3.0.0)
     bartt-ssl_requirement (1.2.3)
     bcrypt-ruby (2.1.2)
+    bson (1.1.1)
     builder (2.1.2)
     capistrano (2.5.19)
       highline
@@ -98,6 +109,8 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    mongo (1.1.1)
+      bson (>= 1.1.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -166,6 +179,7 @@ DEPENDENCIES
   inherited_resources!
   jquery-rails!
   machinist
+  mongoid!
   pg
   rails (= 3.0.1)
   rspec

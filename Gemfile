@@ -32,6 +32,7 @@ gem "haml"
 gem "jquery-rails", :git => "git://github.com/indirect/jquery-rails.git", :tag => "v0.2.3"
 gem "uuidtools"
 gem "bartt-ssl_requirement", :require => "ssl_requirement"
+gem "mongoid", :git => "git://github.com/mongoid/mongoid.git"
 
 group :development do
   gem 'hpricot'
