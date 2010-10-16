@@ -1,0 +1,34 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+en:
+  applications:
+    show:  { back : back }
+
+    form:
+      new     : Create Application
+      create  : Create Application
+      edit    : Update Application
+      update  : Update Application
+
+    index:
+      edit    : Edit application
+      new     : New application
+      title   : Listing applications
+      tags    : tags
+      show    : show
+      destroy : destroy
+      destroy_confirmation : Are you sure?
+
+    new:
+      title   : New application
+      back    : back
+
+    edit:
+      title   : Editing application
+      show    : show
+      back    : back
+
+    show:
+      edit    : edit
+      back    : back
+      tags    : tags
