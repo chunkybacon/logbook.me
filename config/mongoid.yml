@@ -21,4 +21,4 @@ production:
   port: 27017 #<%= ENV['MONGOID_PORT'] %>
   #username: aot_mongodb #<%= ENV['MONGOID_USERNAME'] %>
   #password: f96REh #<%= ENV['MONGOID_PASSWORD'] %>
-  database: aot_survey_production #<%= ENV['MONGOID_DATABASE'] %>
+  database: logbook_production #<%= ENV['MONGOID_DATABASE'] %>
