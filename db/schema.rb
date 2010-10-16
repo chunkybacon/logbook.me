@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016050851) do
+ActiveRecord::Schema.define(:version => 20101016054835) do
 
   create_table "applications", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(:version => 20101016050851) do
 
   add_index "applications", ["api_key"], :name => "index_applications_on_api_key", :unique => true
   add_index "applications", ["user_id"], :name => "index_applications_on_user_id"
+
+  create_table "entries", :force => true do |t|
+    t.integer  "application_id", :null => false
+    t.string   "severity",       :null => false
+    t.string   "facility",       :null => false
+    t.text     "payload",        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "entries", ["application_id"], :name => "index_entries_on_application_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

@@ -1,6 +1,7 @@
 class Application < ActiveRecord::Base
   # Associations
   belongs_to :user
+  has_many   :entries
 
   # Attributes
   attr_accessible :name
