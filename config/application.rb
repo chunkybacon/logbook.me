@@ -44,5 +44,7 @@ module Logbook
       g.template_engine :haml
     end
 
+    # Javascript settings
+    config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery-ui.min rails application)
   end
 end
