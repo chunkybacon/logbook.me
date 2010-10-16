@@ -1,7 +1,8 @@
 %tr{:class => "entry #{entry.severity} #{entry.facility}"}
-  %td
+  %td.severity
     = entry.severity
-  %td
+  %td.facility
     = entry.facility
-  %td
-    = entry.payload
+  %td.payload_body
+    %div.payload_head= truncate(entry.payload)
+    %div.payload.hidden= entry.payload.gsub(",", ",<br />").html_safe

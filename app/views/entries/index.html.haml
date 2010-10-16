@@ -10,10 +10,10 @@
     %option{:value => "#{facility}"}= facility
   end
 
-%table.entries
-  %tr
-    %thead
-      %th Severity
-      %th Facility
-      %th Payload
-  = render @entries
+%table#entries
+  %thead
+    %th Severity
+    %th Facility
+    %th Payload
+  %tbody
+    = render @entries

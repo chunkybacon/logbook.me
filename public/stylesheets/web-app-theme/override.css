@@ -1,1 +1,29 @@
-/* Override here any style defined by web-app-theme */
+.hidden {
+  display: none;
+}
+
+table#entries {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+table#entries tbody {
+  vertical-align: top;
+}
+
+table#entries td {
+ padding: 5px;
+}
+
+table#entries td.severity, td.facility {
+  width: 150px;
+  text-align: center;
+}
+
+table#entries td.payload_body {
+  width: 600px;
+}
+
+tr.odd {
+  background: #A2A9CA;
+}
