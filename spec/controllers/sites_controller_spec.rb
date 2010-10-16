@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SiteController do
+describe SitesController do
 
   describe "GET 'index'" do
     it "should be successful" do

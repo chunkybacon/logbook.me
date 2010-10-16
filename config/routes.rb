@@ -1,5 +1,9 @@
 Logbook::Application.routes.draw do
-  get "site/index"
+  resource  :site, :only => :index do
+    member do
+      get 'dashboard'
+    end
+  end
 
   devise_for :users
   resources :applications do
@@ -8,5 +12,7 @@ Logbook::Application.routes.draw do
 
   resources :entries, :except => :index
 
-  root :to => "site#index"
+  match "dashboard" => "sites#dashboard"
+  
+  root :to => "sites#index"
 end
