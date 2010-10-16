@@ -45,4 +45,7 @@ group :development, :test do
   #   gem 'webrat'
   gem 'web-app-theme', :git => 'git://github.com/pilu/web-app-theme.git'
   gem "faker"
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'machinist'
 end
