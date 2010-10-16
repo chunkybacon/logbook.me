@@ -1,6 +1,6 @@
 $(function() {
 
-  $("tr:nth-child(odd)").addClass("odd");
+  $("tbody > tr:nth-child(odd)").addClass("odd");
 
   function check_filter(value) {
     if (value != "all") {
