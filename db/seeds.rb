@@ -7,19 +7,12 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 #
 #
-#u   = User.create(:email => "test@logbook.me", :password => "123456", :password_confirmation => "123456")
-#app = u.applications.create(:name => "Test App")
-#FASILITIES = %w(important geocode kitchen server garage web)
+u   = User.create(:email => "test@logbook.me", :password => "123456", :password_confirmation => "123456")
+app = u.applications.create(:name => "Test App")
+FACILITIES = %w(important geocode kitchen server garage web)
 
 
-10000.times do
+1000.times do
   payload = Hash[*Faker::Lorem.words(6).collect { |v| [v, v*2] }.flatten]
-  Entry.create(:severity => "test", :payload => payload)
+  Entry.create(:application_id => app.id, :severity => Entry::SEVERITY_TYPES.rand, :facility => FACILITIES.rand, :payload => payload, :timestamp => Time.now)
 end
-
-2000.times do
-  payload = Hash[*Faker::Lorem.words(6).collect { |v| [v, v*2] }.flatten].merge(:super_key => "super value")
-  Entry.create(:severity => "test", :payload => payload)
-end
-
-

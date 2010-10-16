@@ -84,6 +84,7 @@ GEM
     bartt-ssl_requirement (1.2.3)
     bcrypt-ruby (2.1.2)
     bson (1.1.1)
+    bson_ext (1.1.1)
     builder (2.1.2)
     capistrano (2.5.19)
       highline
@@ -171,6 +172,7 @@ PLATFORMS
 
 DEPENDENCIES
   bartt-ssl_requirement
+  bson_ext
   capistrano
   devise
   faker
