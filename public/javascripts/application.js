@@ -19,9 +19,10 @@ $(function() {
     var payload      = $(this).find(".payload");
     var payload_head = $(this).find(".payload_head");
 
-    if(payload.html().length > 20) {
+    if(payload.html().length > 80) {
       payload_head.toggle();
       payload.slideToggle();
+      payload.toggleClass("selected");
     }
   });
 });

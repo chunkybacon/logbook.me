@@ -1,3 +1,10 @@
+#main {
+  float: none;
+  margin-left:auto;
+  margin-right:auto;
+  width: 1000px;  
+}
+
 .hidden {
   display: none;
 }
@@ -6,7 +13,7 @@
   background-color: #CDC7C5;
   padding: 5px;
   margin-left: 7px;
-  width: 778px;
+  width: 978px;
 }
 
 #filters span {
@@ -21,7 +28,7 @@
 table#entries {
   margin-top: 10px;
   padding: 5px;
-  width: 800px;
+  width: 1000px;
 }
 
 table#entries th {
@@ -37,12 +44,48 @@ table#entries td {
 }
 
 table#entries td.severity, td.facility {
-  width: 150px;
+  width: 15%;
   text-align: center;
+  font-family: 'Verdana', sans-serif;
+}
+
+td.severity {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+td.facility {
+  font-style: italic;
+}
+
+.selected {
+  font-size: 1.3em;
+  line-height: 120%; 
+}
+
+tr.error td.severity {
+  color: #780712;
+}
+
+tr.info td.severity {
+  color: green;
+}
+
+tr.debug td.severity {
+  color: blue;
+}
+
+tr.warn td.severity {
+  color: #DE8509;
+}
+
+tr.fatal td.severity {
+  color: #FE011A;
 }
 
 table#entries td.payload_body {
-  width: 100% ;
+  width: 70% ;
+  font-family: 'Courier New', monospace;
 }
 
 tr.odd {
