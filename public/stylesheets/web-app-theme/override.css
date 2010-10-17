@@ -8,7 +8,10 @@ body {
 	font-size: 14px;
 }
 #logo {
-	font: 14px 'Droid Sans Mono', arial, serif;
+	font-family: 24px 'PT Sans';
+}
+.hidden {
+  display: none;
 }
 
 #main {
@@ -276,3 +279,7 @@ td.payload .body {
 
 
 /* end */
+
+#user-navigation, #main-navigation ul.wat-cf li a {
+	text-decoration: underline;
+}
