@@ -3,7 +3,4 @@
     %h2= t '.title'
     .content
       = render 'form'
-      #submenu
-        %ul
-          %li= link_to t('back'), applications_path
-          %li= link_to t('show'), @application
+      %p= link_to t('back'), applications_path
