@@ -10,7 +10,7 @@ set :scm, :git
 set :deploy_via, :remote_cache
 set :git_enable_submodules, false
 set :use_sudo, false
-set :branch, :mongo
+set :branch, :master
 
 role :web, "logbook.me"                          # Your HTTP server, Apache/etc
 role :app, "logbook.me"                          # This may be the same as your `Web` server
