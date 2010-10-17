@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   # Associations
   has_many :applications, :dependent => :destroy
 
+  # Validations
+  validates_length_of :name, :maximum => 64
+  
   # Hack hack
   def display_name
     name.blank? ? email : name
