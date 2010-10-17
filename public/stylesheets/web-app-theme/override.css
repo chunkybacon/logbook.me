@@ -25,6 +25,17 @@ body {
 a { 
 	text-decoration: underline;
 }
+.secondary-navigation ul li {
+  -moz-border-radius-topleft: 9px;
+  -webkit-border-top-left-radius: 9px;
+
+	background-color: #E5E5E5;
+}
+.secondary-navigation ul li a.custom_link{
+	font-size: 12px;
+	color: #000;
+	text-decoration: underline;
+}
 
 /* @group Sticky Footer */
 
