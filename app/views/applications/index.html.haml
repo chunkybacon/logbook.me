@@ -2,7 +2,7 @@
 #block-tables.block
   .secondary-navigation
     %ul.wat-cf
-      %li= link_to t('.new_application', :default => "New application"), new_application_path
+      %li= link_to t('.new_application', :default => "New application"), new_application_path, :class => 'custom_link'
 
   .content
     %h2.title= t('.title', :default => "Applications")
