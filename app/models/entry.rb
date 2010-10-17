@@ -8,7 +8,7 @@ class Entry
   field :timestamp,      :type => DateTime
 
   # Constants
-  SEVERITY_TYPES = ["fatal", "error", "warn", "info", "debug"]
+  SEVERITY_TYPES = ["fatal", "error", "warn", "info", "debug", "unknown"]
 
   # Hooks
   before_validation :normalize_severity
