@@ -6,8 +6,8 @@ class EntriesController < ApplicationController
 
   def index
     application = current_user.applications.find(params[:application_id])
-    @entries = Entry.where(:application_id => application.id).order(:created_at).all
-    @facilities = @entries.collect(&:facility).uniq
+    @entries = Entry.where(:application_id => application.id).order_by(:created_at).all
+    @facilities = @entries.collect(&:facility).uniq if @entries
   end
 
   def create

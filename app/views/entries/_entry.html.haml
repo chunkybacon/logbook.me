@@ -4,7 +4,8 @@
   %td.facility
     = entry.facility
   %td.timestamp
-    = entry.timestamp
+    %div.timestamp_head= entry.timestamp.strftime("%H:%M")
+    %div.timestamp_body.hidden= entry.timestamp
   %td.payload_body
-    %div.payload_head= truncate(entry.payload, :length => 80)
-    %div.payload.hidden= entry.payload.gsub(",", ",<br />").html_safe
+    %div.payload_head= truncate(entry.payload.inspect, :length => 80)
+    %div.payload.hidden= entry.payload.inspect.gsub(",", ",<br />").html_safe

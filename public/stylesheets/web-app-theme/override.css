@@ -67,7 +67,7 @@ table#entries td {
  padding: 5px;
 }
 
-table#entries td.severity, td.facility {
+table#entries td.severity, td.facility, td.timestamp {
   width: 15%;
   text-align: center;
   font-family: 'Verdana', sans-serif;
@@ -85,6 +85,10 @@ td.facility {
 .selected {
   font-size: 1.3em;
   line-height: 120%; 
+}
+
+.selected.timestamp_body  {
+  font-size: 1.1em;
 }
 
 tr.error td.severity {
@@ -114,4 +118,10 @@ table#entries td.payload_body {
 
 tr.odd {
   background: #D8DEF1;
+}
+
+td.empty_table {
+  text-align: center;
+  font-weight: 120%;
+  font-size: 1.5em;
 }
