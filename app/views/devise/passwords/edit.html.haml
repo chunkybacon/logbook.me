@@ -1,10 +1,10 @@
+= devise_error_messages!
 #box
   #block-signup.block
     %h2 Change your password
     .content
       %br/
       = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, :class => "form" }) do |f|
-        = devise_error_messages!
         %p
           = f.label :password, :class => "label"
           = f.password_field :password, :class => "text_field"
