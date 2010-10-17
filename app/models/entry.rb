@@ -2,10 +2,16 @@ class Entry
   include Mongoid::Document
   
   field :application_id, :type => Integer
+  index :application_id
+
   field :severity
+  index :severity
+
   field :facility
   field :payload,        :type => Hash
+  
   field :timestamp,      :type => DateTime
+  index :timestamp
 
   # Constants
   SEVERITY_TYPES = ["fatal", "error", "warn", "info", "debug", "unknown"]
