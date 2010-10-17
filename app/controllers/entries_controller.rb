@@ -21,13 +21,24 @@ class EntriesController < ApplicationController
   def create
     @application = Application.find_by_api_key(params[:api_key])
     if @application
-      params[:entries].values.each do |entry|
-        entry.merge!(:application_id => @application.id)
-        Entry.create!(entry)
+      params[:entries].each_value do |entry|
+        if entry.is_a? Hash
+          create_entry(entry)
+        else
+          create_entry(params[:entries])
+          break
+        end
       end
       head :ok
     else
       render :nothing => true, :status => 401
     end
+  end
+
+  private
+
+  def create_entry(entry)
+    entry.merge!(:application_id => @application.id)
+    Entry.create!(entry)
   end
 end

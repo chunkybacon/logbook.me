@@ -19,8 +19,15 @@ describe EntriesController do
     end
 
     it 'should be able to create multiple entries from parameters' do
-      expect { do_post :entries => { 0 => Entry.plan } }.
-        to change { application.entries.count }.by(1)
+      before_count = Entry.where(:application_id => application.id).count
+      do_post :entries => { 0 => Fabricate.attributes_for(:entry), 1 => Fabricate.attributes_for(:entry) }
+      Entry.where(:application_id => application.id).count.should == before_count + 2
+    end
+
+    it 'should be able to create single entry from parameters' do
+      before_count = Entry.where(:application_id => application.id).count
+      do_post :entries => Fabricate.attributes_for(:entry)
+      Entry.where(:application_id => application.id).count.should == before_count + 1
     end
   end
 end
