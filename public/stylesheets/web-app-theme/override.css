@@ -82,9 +82,7 @@ body > #container {
 	text-align: left;
 }
 
-
 /* @end */
-
 
 /* @group Entries Table */
 
@@ -165,8 +163,12 @@ td.payload_body {
   padding: 2px 3px;
 }
 
+#filters #entries_filter_facility {
+  width: 230px;
+}
+
 #filters input.date {
-  width: 100px;
+  width: 95px;
   text-align: center;
 }
 

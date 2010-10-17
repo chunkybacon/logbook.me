@@ -19,8 +19,6 @@ class EntriesController < ApplicationController
 
     if request.xhr?
       render :partial => 'entries', :locals => { :entries => @entries }
-    else
-      @facilities = @entries.collect(&:facility).uniq
     end
   end
 

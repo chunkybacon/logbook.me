@@ -12,7 +12,7 @@
     .content
       = simple_form_for @filter, :url => application_entries_path(@application), :html => { :method => :get } do |f|
         = f.input :severity, :collection => Entry::SEVERITY_TYPES.each, :required => false, :prompt => 'Any'
-        = f.input :facility, :collection => @facilities, :required => false, :prompt => 'Any'
+        = f.input :facility, :required => false
         = f.input :time_frame, :collection => %w(Today Yesterday Custom), :prompt => 'All', :required => false
         = f.input :time_from, :required => false, :label => 'From', :input_html => { :class => 'dateinput' }, :wrapper_html => { :class => 'date_field' }
         = f.input :time_to, :required => false, :label => 'To', :input_html => { :class => 'dateinput' }, :wrapper_html => { :class => 'date_field' }
