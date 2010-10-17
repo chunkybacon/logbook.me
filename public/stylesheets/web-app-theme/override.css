@@ -279,3 +279,7 @@ td.payload .body {
 
 
 /* end */
+
+#user-navigation, #main-navigation ul.wat-cf li a {
+	text-decoration: underline;
+}
