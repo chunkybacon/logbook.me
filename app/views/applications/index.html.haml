@@ -1,5 +1,6 @@
 %h1= t('.title', :default => "Applications")
-%p= link_to t('.new_application', :default => "New application"), new_application_path
+
+= link_to t('.new_application', :default => "New application"), new_application_path
 
 %table.zebra
   %thead
@@ -13,7 +14,7 @@
       %tr{ :class => cycle(:odd, :even) }
         %td.middle= application.name
         %td.middle= application.api_key
-        %td.action.middle= link_to t('show', :default => "Show"), application
+        %td.action.middle= link_to t('show', :default => "Show"), application_entries_path(application)
         %td.action.middle= link_to t('edit', :default => "Edit"), edit_application_path(application)
         %td.action.middle= link_to t('destroy', :default => "Destroy"), application, :confirm => t('are_you_sure', :default => "Are you sure"), :method => :delete
         

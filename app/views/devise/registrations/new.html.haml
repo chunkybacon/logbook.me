@@ -1,24 +1,31 @@
-%h2 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  %p
-    = f.label :email
-    %br/
-    = f.text_field :email
-  %p
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %p
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
+#box
+  #block-signup.block
+    %h2 Sign up
+    .content
+      = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form'}) do |f|
+        = devise_error_messages!
+        %p
+          = f.label :email, :class => 'label'
+          %br/
+          = f.text_field :email, :class => 'text_field'
+        %p
+          = f.label :password, :class => 'label'
+          %br/
+          = f.password_field :password, :class => 'text_field'
+        %p
+          = f.label :password_confirmation, :class => 'label'
+          %br/
+          = f.password_field :password_confirmation, :class => 'text_field'
 
-  %p
-    - resource.applications.build if resource.applications.empty?
-    = f.fields_for :applications do |af|
-      = af.label :name, "Your first application title"
-      %br/
-      = af.text_field :name
-  %p= f.submit "Sign up"
+        %p
+          - resource.applications.build if resource.applications.empty?
+          = f.fields_for :applications do |af|
+            = af.label :name, "Your first application title", :class => 'label'
+            %br/
+            = af.text_field :name, :class => 'text_field'
+          .group.navform.wat-cf  
+            %button.button{:type => 'submit'}
+              =image_tag('web-app-theme/icons/tick.png', :alt => 'Sign in')
+              Sign up
+          
 = render :partial => "devise/shared/links"

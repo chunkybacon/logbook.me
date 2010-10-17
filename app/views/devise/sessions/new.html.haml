@@ -1,16 +1,22 @@
-%h2 Sign in
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %p
-    = f.label :email
-    %br/
-    = f.text_field :email
-  %p
-    = f.label :password
-    %br/
-    = f.password_field :password
-  - if devise_mapping.rememberable?
-    %p
-      = f.check_box :remember_me
-      = f.label :remember_me
-  %p= f.submit "Sign in"
+#box
+  #block-login.block
+    %h2 Sign in
+    .content.login
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form login'}) do |f|
+        %p
+          = f.label :email, :class => 'label'
+          %br/
+          = f.text_field :email, :class => 'text_field'
+        %p
+          = f.label :password, :class => 'label'
+          %br/
+          = f.password_field :password, :class => 'text_field'
+        - if devise_mapping.rememberable?
+          %p
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .group.navform.wat-cf
+          %button.button{:type => 'submit'}
+            =image_tag('web-app-theme/icons/key.png', :alt => 'Sign in')
+            Sign in
 = render :partial => "devise/shared/links"
