@@ -10,4 +10,10 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :applications, :dependent => :destroy
+
+  # Hack hack
+  def display_name
+    name.empty? ? email : name
+  end
+  
 end

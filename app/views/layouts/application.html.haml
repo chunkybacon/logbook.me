@@ -11,14 +11,14 @@
         #logbook
           = image_tag '/images/logbook.png'
         %h1
-          %a{:href => "/"} LogBook
+          %a{:href => "/"} Logbook
         #user-navigation
           %ul.wat-cf
             - if current_user
               %li
-                %a{:href => "#"}= t("web-app-theme.profile", :default => "Profile")
+                %a{:href => "/users/edit"}= current_user.display_name 
               %li
-                %a{:href => "#"}= t("web-app-theme.settings", :default => "Dashboard")
+                %a{:href => "/"}= t("web-app-theme.settings", :default => "Dashboard")
               %li
                 = link_to(t("web-app-theme.logout", :default => "Logout"), destroy_user_session_path)
             - else
