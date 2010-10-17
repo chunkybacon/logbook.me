@@ -176,6 +176,10 @@ td.payload_body {
   display: none
 }
 
+#filters .payload_filter_fields {
+  margin-top: 5px;
+}
+
 #filters .payload_filter_fields input {
   width: 100px;
   vertical-align:middle;
@@ -184,6 +188,7 @@ td.payload_body {
 #filters #payload_filter a.add {
   display: block;
   margin-top: 5px;
+  outline: none;
 }
 
 #filters .payload_filter_fields a.delete {
@@ -192,6 +197,7 @@ td.payload_body {
   margin-left: 3px;
   margin-top: 5px;
   position: absolute;
+  outline: none;
 }
 
 #filters .payload_filter_fields a.delete img {
