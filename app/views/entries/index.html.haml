@@ -4,16 +4,5 @@
     = f.input :facility, :collection => @facilities
     = f.button :submit
 
-= will_paginate @entries
-
-%table#entries
-  %thead
-    %tr
-      %th Severity
-      %th Facility
-      %th Timestamp
-      %th Payload
-  %tbody
-    = render @entries
-
-= will_paginate @entries
+#entries
+  = render :partial => 'entries', :locals => { :entries => @entries }
