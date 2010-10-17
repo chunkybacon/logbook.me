@@ -1,6 +1,9 @@
-%h1= t '.title'
-#submenu
-  %ul
-    %li= link_to t('back'), applications_path
-    %li= link_to t('show'), @application
-= render 'form'
+#box
+  .block
+    %h2= t '.title'
+    .content
+      = render 'form'
+      #submenu
+        %ul
+          %li= link_to t('back'), applications_path
+          %li= link_to t('show'), @application
