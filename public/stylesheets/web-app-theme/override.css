@@ -8,6 +8,13 @@ abbr[title], acronym[title] {
 	display: none;
 }
 
+#main {
+	width: 90%;
+	max-width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	float: none;
+}
 /* @group Entries Table */
 
 #filters {
@@ -75,6 +82,11 @@ td.payload_body {
 	font-family: 'Courier New', monospace;
 }
 
+#main.entries {
+	width: 71%;
+	float: left;
+}
+
 /* @end */
 
 #box ol {
@@ -89,5 +101,10 @@ td.payload_body {
   padding: 5px;
   font-size: 110%;
   line-height: 1.5em;
+}
+.steps {
+	font-size: 18px;
+	line-height: 160%;
+	padding: 30px 30px 30px 60px;
 }
 /* end */
