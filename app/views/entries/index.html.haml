@@ -22,11 +22,6 @@
       %th Timestamp
       %th Payload
   %tbody
-    - if @entries.present?
-      = render @entries
-    - else
-      %tr
-        %td.empty_table{:colspan => 4}
-          = render :partial => 'shared/setup_instructions', :locals => { :application => @application }
+    = render @entries
 
 = paginate(@pages, params[:page])

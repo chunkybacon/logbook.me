@@ -12,6 +12,10 @@ class EntriesController < ApplicationController
     page = 1 if !page or page == 0
     @entries = @entries.paginate(:page => page, :per_page => 100)
     @facilities = @entries.collect(&:facility).uniq if @entries
+
+    if @entries.empty?
+      render :no_entries
+    end
   end
 
   def create
