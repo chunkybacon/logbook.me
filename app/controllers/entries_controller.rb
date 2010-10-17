@@ -10,7 +10,7 @@ class EntriesController < ApplicationController
     Time.zone = @application.time_zone
 
     @entries = Entry.where(@filter.conditions.merge(:application_id => @application.id)).
-                     order_by(:timestamp).
+                     order_by(:timestamp.desc).
                      paginate(:page => params[:page], :per_page => 20)
 
     if @entries.empty? && @filter.conditions.empty?
