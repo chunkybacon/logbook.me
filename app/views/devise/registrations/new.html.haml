@@ -13,5 +13,12 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation
+
+  %p
+    - resource.applications.build if resource.applications.empty?
+    = f.fields_for :applications do |af|
+      = af.label :name, "Your first application title"
+      %br/
+      = af.text_field :name
   %p= f.submit "Sign up"
 = render :partial => "devise/shared/links"
