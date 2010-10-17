@@ -37,10 +37,8 @@
         #main{:class => controller_name}
           = yield
 
-          #footer
-            .block
-              %p
-                Copyright &copy; #{Time.now.year} Logbook
-
         #sidebar
           = yield :sidebar
+    #footer
+      %p
+        Copyright &copy; #{Time.now.year} Logbook

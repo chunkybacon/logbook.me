@@ -26,6 +26,55 @@ a {
 	text-decoration: underline;
 }
 
+/* @group Sticky Footer */
+
+html, body, #container {
+    height: 100%;
+}
+
+body > #container {
+    height: auto;
+    min-height: 100%;
+}
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+#wrapper {
+    padding-bottom: 10px;
+}
+
+#footer {
+    clear: both;
+    height: 10px;
+    margin-top: -45px;
+    position: relative;
+    padding-right: 20px;
+    padding-left: 20px;
+	text-align: left;
+}
+
+
+/* @end */
+
+
 /* @group Entries Table */
 
 td.severity, td.facility, td.timestamp {
