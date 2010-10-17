@@ -148,4 +148,9 @@ td.payload_body {
   display:block;
 }
 
+#user-navigation ul li {
+  padding:2px 10px;
+}
+
+
 /* end */
