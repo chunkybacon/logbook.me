@@ -65,3 +65,8 @@
       document.getElementsByTagName('head')[0].appendChild(s);}
       _loadSuper = window.onload;
       window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+      
+      
+  %script{:type=>"text/javascript"}
+    var rumbleUrl = 'http://railsrumble.com/teams/48-hours-of-unpaid-work-and-5-cookies';
+  %script{:type=>"text/javascript", :src=>"http://blog.railsrumble.com/javascripts/rumble-r10-sash.js"}

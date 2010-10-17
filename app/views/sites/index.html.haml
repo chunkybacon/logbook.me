@@ -1,18 +1,27 @@
 
 #block-text.block
   .content
-    %h2.title Get yourself a cool application log in just 3 steps:
+    %h2.title.center Logbook makes logging easy
+    
+    %h3.title.center Watch the screencast for details
+   
     .inner
-      .steps
-        %ol
-          %li
-            = link_to 'Sign Up', new_user_registration_path
-          %li
-            Configure your application
-          %li
-            Start logging!
+      #screencast
+        %object{:height => "360", :width => "640"}
+          %param{:name => "movie", :value => "http://www.youtube.com/v/E0Nlu8Qr9gU?hl=en&fs=1"}
+          %param{:name => "allowFullScreen", :value => "true"}
+          %param{:name => "allowscriptaccess", :value => "always"}
+          %embed{:allowfullscreen => "true", :allowscriptaccess => "always", :height => "360", :src => "http://www.youtube.com/v/E0Nlu8Qr9gU?hl=en&fs=1", :type => "application/x-shockwave-flash", :width => "640"}
+    
+      %br/
+      %br/
+    
+      #main_sign_up
+        =link_to 'Sign Up', new_user_registration_path  
 
-      %p
-        %a
-          = link_to 'Find out how it works', 'http://github.com/logbook/logbook_gem/wiki/Basic-Usage'
+      %br/
+      
+      %h3.title.center 
+        Coming soon: 
+      %p.center Replace standard logger, support for other languages and frameworks, paid accounts with more features.    
 
