@@ -1,0 +1,20 @@
+%h2 Add logbook gem to your app's Gemfile
+
+%pre gem 'logbook'
+
+%h2
+  = link_to 'Download config file', config_file_path(application.api_key)
+  to the "config" directory or just do
+
+%pre
+  wget
+  = config_file_url(application.api_key)
+
+%h2
+  All set! Start using it,
+  = link_to 'here is how'
+
+%h2 Fancy testing it right now? Try the command below in your terminal
+
+%pre
+  curl ...

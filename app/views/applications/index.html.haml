@@ -15,7 +15,7 @@
       %tr{ :class => cycle(:odd, :even) }
         %td= application.user.email
         %td= application.name
-        %td= application.api_key
+        %td= link_to 'Config file', config_file_path(application.api_key)
         %td.action= link_to t('show', :default => "Show"), application
         %td.action= link_to t('edit', :default => "Edit"), edit_application_path(application)
         %td.action= link_to t('destroy', :default => "Destroy"), application, :confirm => t('are_you_sure', :default => "Are you sure"), :method => :delete

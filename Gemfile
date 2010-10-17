@@ -39,16 +39,18 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'sqlite3-ruby'
+  gem 'web-app-theme', :git => 'git://github.com/pilu/web-app-theme.git'
 end
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-  #   gem 'webrat'
-  gem 'web-app-theme', :git => 'git://github.com/pilu/web-app-theme.git'
   gem "faker"
-  gem 'rspec'
+end
+
+group :test do
   gem 'rspec-rails'
   gem 'machinist'
+  gem 'database_cleaner'
 end

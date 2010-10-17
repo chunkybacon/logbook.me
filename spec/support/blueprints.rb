@@ -15,9 +15,3 @@ Application.blueprint do
   user
   name
 end
-
-Entry.blueprint do
-  severity { 'INFO' }
-  facility { 'standard' }
-  payload  { { :message => 'whatever' } }
-end
