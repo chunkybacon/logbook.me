@@ -137,4 +137,9 @@ td.payload_body {
 	line-height: 160%;
 	padding: 30px 30px 30px 60px;
 }
+
+.form .fieldWithErrors .error {
+  display:block;
+}
+
 /* end */
