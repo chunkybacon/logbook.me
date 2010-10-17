@@ -275,3 +275,12 @@ td.empty_table {
    }
 
 /* @end */
+
+/* @group Misc */
+.code {
+  background-color: #EEEAEA;
+  padding: 5px;
+  font-size: 110%;
+  line-height: 1.5em;
+}
+/* end */
