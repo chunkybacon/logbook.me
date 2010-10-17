@@ -42,6 +42,87 @@ body > #container {
 
 /* @end */
 
+/* @group Tables Zebra */
+
+table.zebra {
+	vertical-align: top;
+	left: 0px;
+	top: 0px;
+	font: 12px Arial, Helvetica, Geneva, sans-serif;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+table.zebra th {
+	height: 30px;
+	border-bottom: 2px solid #333;
+	padding: 0;
+	margin: 0;
+	background-color: #666;
+	font-weight: normal;
+	font-style: normal;
+	color: #fff;
+}
+
+table.zebra td {
+	height: 25px;
+	border-bottom: 1px solid #b3b3b3;
+	margin: 0;
+	padding: 0 5px;
+}
+
+table.zebra tr.odd {
+	background-color: #f3f3f3;
+}
+
+table.zebra tr.even {
+	background-color: #fbfbfb;
+}
+
+table.zebra th.small {
+	width: 60px;
+}
+
+table.zebra th.medium {
+	width: 100px;
+}
+
+table.zebra th.icon {
+	width: 25px;
+	padding: 0 1px;
+}
+
+tr.header a {
+	text-decoration: underline;
+	color: #fff;
+}
+
+tr.header a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+
+td.top {
+	vertical-align: top;
+	left: 0px;
+	top: 0px;
+}
+
+td.top_middle {
+	vertical-align: top;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+}
+
+td.middle {
+	text-align: center;
+}
+
+/* @end */
+
+
 #header {
   height: 163px;
   background: #232c30 url('/images/header_bg.gif') left repeat-x;
