@@ -46,7 +46,5 @@ module Logbook
 
     # Javascript settings
     config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery-ui.min rails)
-
-    config.to_prepare { Devise::SessionsController.ssl_required :new, :create }
   end
 end
