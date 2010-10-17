@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   # Hack hack
   def display_name
-    name.empty? ? email : name
+    name.blank? ? email : name
   end
   
 end
