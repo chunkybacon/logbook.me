@@ -16,13 +16,13 @@ $(function() {
   });
 
   $('.entry').click(function(event) {
-    var payload      = $(this).find(".payload");
-    var payload_head = $(this).find(".payload_head");
+    var bodies = $(this).find(".payload, .timestamp_body");
+    var heads  = $(this).find(".payload_head, .timestamp_head");
 
-    if(payload.html().length > 80) {
-      payload_head.toggle();
-      payload.slideToggle();
-      payload.toggleClass("selected");
+    if($(bodies[1]).html().length > 80) {
+      heads.toggle();
+      bodies.slideToggle();
+      bodies.toggleClass("selected");
     }
   });
 });
