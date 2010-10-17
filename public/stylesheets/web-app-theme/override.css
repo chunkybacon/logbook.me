@@ -90,4 +90,13 @@ td.payload_body {
   font-size: 110%;
   line-height: 1.5em;
 }
+
+#error_explanation {
+  margin: 15px;
+  padding: 20px;
+  font-size: 140%;
+  border: 1px solid #ffbbbb;
+  background-color: #ffdddd;
+}
+
 /* end */

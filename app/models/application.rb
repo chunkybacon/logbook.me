@@ -4,7 +4,7 @@ class Application < ActiveRecord::Base
   has_many   :entries
 
   # Attributes
-  attr_accessible :name
+  attr_accessible :name, :time_zone
 
   # Hooks
   before_create :generate_api_key
