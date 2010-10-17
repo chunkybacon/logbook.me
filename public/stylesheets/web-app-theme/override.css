@@ -8,7 +8,7 @@ body {
 	font-size: 14px;
 }
 #logo {
-	font-family: 24px 'PT+Sans';
+	font: 14px 'Droid Sans Mono', arial, serif;
 }
 .hidden {
   display: none;
