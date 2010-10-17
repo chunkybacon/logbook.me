@@ -1,13 +1,4 @@
 = simple_form_for @application, :html => { :class => "form" } do |f|
-  - if @application.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@application.errors.count, "error")
-        prohibited this application from being saved:
-
-      %ul
-      - @application.errors.full_messages.each do |msg|
-        %li= msg
   %p
     = f.input :name, :input_html => { :class => 'text_field' }, :label_html => { :class => "label" }
 

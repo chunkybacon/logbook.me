@@ -2,14 +2,14 @@ class ApplicationsController < InheritedResources::Base
   before_filter :authenticate_user!
 
   def create
-    create! do |format|
-      format.html { redirect_to applications_path }
-    end    
+    create! do |success, failure|
+      success.html { redirect_to application_entries_path(@application)  }
+    end
   end
 
   def update
-    update! do |format|
-      format.html { redirect_to applications_path }
+    update! do |success, failure|
+      success.html { redirect_to applications_path }
     end
   end  
   
