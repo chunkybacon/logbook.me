@@ -7,9 +7,7 @@
     = csrf_meta_tag
   %body
     #container
-      #header
-        #logbook
-          = image_tag '/images/logbook.png'
+      #header        
         %h1
           %a{:href => "/"} Logbook
         #user-navigation
@@ -28,6 +26,8 @@
                 = link_to_unless_current(t("web-app-theme.login", :default => "Login"), new_user_session_path)
         #main-navigation
           %ul.wat-cf
+            %li
+              %a{:href => "/"}= t("web-app-theme.settings", :default => "Dashboard")
       #wrapper.wat-cf.clearfix
         .flash
           - flash.each do |type, message|
@@ -42,4 +42,4 @@
     #footer
       .block
         %p
-          Copyright &copy; #{Time.now.year} LogBook.
+          Copyright &copy; #{Time.now.year} Logbook.
