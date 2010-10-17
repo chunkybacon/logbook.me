@@ -16,4 +16,13 @@
         = f.input :time_frame, :collection => %w(Today Yesterday Custom), :prompt => 'All', :required => false
         = f.input :time_from, :required => false, :label => 'From', :input_html => { :class => 'dateinput' }, :wrapper_html => { :class => 'date_field' }
         = f.input :time_to, :required => false, :label => 'To', :input_html => { :class => 'dateinput' }, :wrapper_html => { :class => 'date_field' }
+        #payload_filter.input
+          %label Payload (key => value)
+          %div.payload_filter_fields
+            %input{ :name => 'entries_filter[payload][INDEX][key]' }
+            \=>
+            %input{ :name => 'entries_filter[payload][INDEX][value]' }
+            = link_to image_tag('cancel.png'), '#', :class => 'delete'
+          = link_to '+ Add more', '#', :class => 'add'
+
         = f.button :submit, 'Apply'
