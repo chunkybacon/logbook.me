@@ -43,13 +43,15 @@ body > #container {
 #footer {
 	clear: both;
 	height: 27px;
-	margin-top: -30px;
+	margin-top: -47px;
 	position: relative;
+	padding-right: 20px;
+	padding-left: 20px;
 }
 #footer .block{
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background-color: #1A1A1A;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #002134;
 	color: white;
 }
 
