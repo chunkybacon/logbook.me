@@ -1,3 +1,47 @@
+/* @group Sticky Footer */
+
+html, body, #container {
+	height: 100%;
+}
+
+body > #container {
+	height: auto;
+	min-height: 100%;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+#wrapper {
+	padding-bottom: 30px;
+}
+
+#footer {
+	clear: both;
+	height: 30px;
+	margin-top: -30px;
+	position: relative;
+}
+
+/* @end */
+
 #header {
   height: 163px;
   background: #232c30 url('/images/header_bg.gif') left repeat-x;
@@ -21,7 +65,6 @@
   top: 70px;
   right: 10px;
 }
-
 #main {
   float: none;
   margin-left:auto;

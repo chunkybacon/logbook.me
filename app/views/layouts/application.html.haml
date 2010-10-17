@@ -28,16 +28,18 @@
                 = link_to_unless_current(t("web-app-theme.login", :default => "Login"), new_user_session_path)
         #main-navigation
           %ul.wat-cf
-      #wrapper.wat-cf
+      #wrapper.wat-cf.clearfix
         .flash
           - flash.each do |type, message|
             %div{:class => "message #{type}"}
               %p= message
         #main
           = yield
-          #footer
-            .block
-              %p
-                Copyright &copy; #{Time.now.year} LogBook.
+
         #sidebar
           = yield :sidebar
+
+    #footer
+      .block
+        %p
+          Copyright &copy; #{Time.now.year} LogBook.
