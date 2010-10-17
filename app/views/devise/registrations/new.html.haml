@@ -2,25 +2,25 @@
   = devise_error_messages!
   #box
     #block-signup.block
-      %h2 Sign up
+      %h2 User Details
       .content
         %p
           = f.label :email, :class => 'label'
           = f.text_field :email, :class => 'text_field'
         %p
-          = f.label :password, :class => 'label'
+          = f.label :password, 'Password (6 chars min)', :class => 'label'
           = f.password_field :password, :class => 'text_field'
         %p
           = f.label :password_confirmation, :class => 'label'
           = f.password_field :password_confirmation, :class => 'text_field'
   #box
     .block
-      %h2 Application Info
+      %h2 Application Details
       .content
         - resource.applications.build if resource.applications.empty?
         = f.fields_for :applications do |af|
           %p
-            = af.label :name, "Your first application name", :class => 'label'
+            = af.label :name, "Your application name", :class => 'label'
             = af.text_field :name, :class => 'text_field'
           %p
             = af.label :time_zone, "and time zone", :class => 'label'
