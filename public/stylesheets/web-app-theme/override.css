@@ -256,3 +256,37 @@ td.empty_table {
   line-height: 30px;
   margin-left: 50px;
 }
+
+
+/* @group Pagination */
+  .pagination a, .pagination span, .pagination em {
+    padding: .2em .5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+   }
+
+  .pagination span.disabled {
+    color: #999;
+    border: 1px solid #DDD;
+   }
+
+  .pagination em {
+    font-weight: bold;
+    background: #2E6AB1;
+    color: white;
+    border: 1px solid #2E6AB1;
+   }
+
+  .pagination a {
+    text-decoration: none;
+    color: #105CB6;
+    border: 1px solid #9AAFE5; 
+  }
+
+  .pagination a:hover, .pagination a:focus {
+    color: #003;
+    border-color: #003;
+   }
+
+/* @end */
