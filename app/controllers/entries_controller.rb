@@ -13,7 +13,7 @@ class EntriesController < ApplicationController
       render :no_entries unless request.xhr?
     else
       @entries = criteria.where(@filter.conditions).
-        order_by(:timestamp).
+        order_by(:timestamp.desc).
         paginate(:page => params[:page], :per_page => 20)
 
       if request.xhr?

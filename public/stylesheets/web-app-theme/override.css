@@ -10,9 +10,6 @@ body {
 #logo {
   font-family: 24px 'PT+Sans';
 }
-.hidden {
-  display: none;
-}
 
 #main {
 	width: 90%;
@@ -86,28 +83,40 @@ body > #container {
 
 /* @group Entries Table */
 
+tr.entry {
+  cursor: pointer;
+}
+
+tr.opened {
+  cursor: default;
+}
+
+tr.entry .body {
+  display: none;
+}
+
 td.severity, td.facility, td.timestamp {
 	width: 15%;
-	text-align: center;
 	font-family: 'Verdana', sans-serif;
 }
 
 td.severity {
 	font-weight: bold;
 	font-size: 1.2em;
+  width: 15px;
+  text-align: center;
 }
 
 td.facility {
 	font-style: italic;
 }
 
-.selected {
+.opened {
+}
 	font-size: 1.3em;
 	line-height: 120%;
-}
 
-.selected .timestamp_body {
-	font-size: 1.1em;
+.opened .timestamp_body {
 }
 
 tr.error td.severity {
@@ -130,9 +139,32 @@ tr.fatal td.severity {
 	color: #FE011A;
 }
 
-td.payload_body {
+td.payload {
 	width: 70%;
 	font-family: 'Courier New', monospace;
+}
+
+td.payload .body {
+  position: relative;
+}
+
+td.payload .close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: url(/images/bullet_arrow_up.png) no-repeat;
+  padding-left: 15px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+td.payload .key {
+  /* color: #666; */
+  font-weight: bold;
+}
+
+td.payload .body {
+  line-height: 140%;
 }
 
 #main.entries {
