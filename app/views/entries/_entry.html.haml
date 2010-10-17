@@ -1,11 +1,14 @@
 %tr{:class => "#{cycle(:odd, :even)} entry #{entry.severity} #{entry.facility}"}
-  %td.severity
-    = entry.severity
+  %td.severity{:title => entry.severity}
+    = entry.severity[0, 1].upcase
   %td.facility
     = entry.facility
   %td.timestamp
-    %div.timestamp_head= entry.timestamp.strftime("%H:%M")
-    %div.timestamp_body.hidden= l(entry.timestamp)
-  %td.payload_body
-    %div.payload_head= truncate(entry.payload.inspect, :length => 80)
-    %div.payload.hidden= entry.payload.inspect.gsub(",", ",<br />").html_safe
+    %div.head
+      = entry.timestamp.strftime("%d %b, %H:%M")
+    %div.body= l(entry.timestamp)
+  %td.payload
+    %div.head= truncate(simple_human_friendly_payload(entry.payload), :length => 80)
+    %div.body
+      = human_friendly_payload(entry.payload).html_safe
+      = link_to 'Close', '#', :class => 'close'

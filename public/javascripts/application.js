@@ -18,18 +18,27 @@ $(function() {
   });
 
   $('.entry').live('click', function(event) {
-    var bodies = $(this).find(".payload, .timestamp_body");
-    var heads  = $(this).find(".payload_head, .timestamp_head");
+    var self = $(this);
 
-    if ($(heads[0]).css("display") == "none") {
-      bodies.fadeOut("fast", function() {
-        heads.fadeIn("fast");
-      });
-    } else {
-       heads.fadeOut("fast", function() {;
-         bodies.fadeIn("fast");
+    if (!self.hasClass('opened')) {
+      self.addClass('opened');
+
+       self.find('.head').fadeOut("fast", function() {
+         self.find('.body').fadeIn("fast");
        });
     }
+  });
+
+  $('.entry .close').live('click', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    var entry = $(this).parents('.entry');
+    entry.removeClass('opened');
+
+    entry.find('.body').fadeOut("fast", function() {
+      entry.find('.head').fadeIn("fast");
+    });
   });
 
   $('#entries_filter_time_frame').live('change', function() {
@@ -39,7 +48,6 @@ $(function() {
       $('.date_field').hide();
     }
   });
-
 
   var PayloadFilter = function(element) {
     var wrapper = element;
