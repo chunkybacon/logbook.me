@@ -15,6 +15,13 @@ abbr[title], acronym[title] {
 	margin-left: auto;
 	float: none;
 }
+
+a { 
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
 /* @group Entries Table */
 
 #filters {
