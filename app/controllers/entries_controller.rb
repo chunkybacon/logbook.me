@@ -5,13 +5,17 @@ class EntriesController < ApplicationController
   before_filter :authenticate_user!, :only => :index
 
   def index
-    application = current_user.applications.find(params[:application_id])
-    @entries = Entry.where(:application_id => application.id).order_by(:created_at)
+    @application = current_user.applications.find(params[:application_id])
+    @entries = Entry.where(:application_id => @application.id).order_by(:created_at)
     @pages   = (@entries.count/100.to_f).ceil
     page = params[:page].try(:to_i)
     page = 1 if !page or page == 0
     @entries = @entries.paginate(:page => page, :per_page => 100)
     @facilities = @entries.collect(&:facility).uniq if @entries
+
+    if @entries.empty?
+      render :no_entries
+    end
   end
 
   def create
