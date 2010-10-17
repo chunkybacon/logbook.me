@@ -1,9 +1,10 @@
-%h2 Add logbook gem to your app's Gemfile
+
+%h3 Add logbook gem to your app's Gemfile
 
 .code
   %code gem 'logbook'
 
-%h2
+%h3
   = link_to 'Download config file', config_file_path(application.api_key)
   to the “config” directory or just do (from your app's root directory)
 
@@ -11,11 +12,11 @@
   %code
     = "wget #{config_file_url(application.api_key)} -O config/logbook.yml"
 
-%h2
+%h2.title
   All set! Start using it,
   = link_to 'here is how', '#'
 
-%h2 Fancy testing it right now? Try the command below in your terminal
+%h3 Fancy testing it right now? Try the command below in your terminal
 
 .code
   %code

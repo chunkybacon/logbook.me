@@ -8,7 +8,7 @@ body {
 	font-size: 14px;
 }
 #logo {
-	font: 14px 'Droid Sans Mono', arial, serif;
+	font: 14px 'Droid Sans Mono', helvetica, serif;
 }
 .hidden {
   display: none;
