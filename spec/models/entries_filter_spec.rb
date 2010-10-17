@@ -59,5 +59,28 @@ describe EntriesFilter do
         }
       end
     end
+
+    context 'when setting payload filter' do
+      it 'should accept a hash of filters' do
+        @params = {
+          :payload => {
+            0 => { 'key' => 'KEY', 'value' => 'VALUE' } 
+          }
+        }
+        subject.conditions.should == {
+          'payload.KEY' => /VALUE/
+        }
+      end
+
+      it 'should ignore empty filters' do
+        @params = {
+          :payload => {
+            0 => { 'key' => 'KEY', 'value' => '' },
+            1 => { 'key' => '', 'value' => 'VALUE' }
+          }
+        }
+        subject.conditions.should be_empty
+      end
+    end
   end
 end

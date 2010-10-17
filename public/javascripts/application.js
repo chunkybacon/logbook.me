@@ -40,5 +40,35 @@ $(function() {
     }
   });
 
+
+  var PayloadFilter = function(element) {
+    var wrapper = element;
+    var template = $('<div>').append(wrapper.find('.payload_filter_fields:first')).remove().html();
+    var index = 0;
+
+    var add = function() {
+      var html = template.replace(/INDEX/g, index++);
+      $(html).insertBefore(wrapper.find('.add'));
+      wrapper.find('.delete:gt(0)').show();
+    };
+
+    wrapper.click(function(event) {
+      if ($(event.target).hasClass('add')) {
+        event.preventDefault();
+        add();
+      }
+
+      if ($(event.target).hasClass('delete') || $(event.target).parent().hasClass('delete')) {
+        $(event.target).parents('.payload_filter_fields').remove();
+      }
+    });
+
+    add();
+  }
+
+  if ($('#payload_filter').length > 0) {
+    new PayloadFilter($('#payload_filter'));
+  }
+
   $('input.dateinput').dateinput();
 });

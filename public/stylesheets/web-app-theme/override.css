@@ -103,6 +103,25 @@ td.payload_body {
   display: none
 }
 
+#filters .payload_filter_fields input {
+  width: 100px;
+  vertical-align:middle;
+}
+
+#filters #payload_filter a.add {
+  display: block;
+  margin-top: 5px;
+}
+
+#filters .payload_filter_fields a.delete {
+  display: none;
+  vertical-align:middle;
+}
+
+#filters .payload_filter_fields a.delete img {
+  vertical-align:middle;
+}
+
 /* @end */
 
 #box ol {
