@@ -8,6 +8,9 @@ $(function() {
     }
   }
 
+  /*Automagically set focus on first input on page*/
+  $("div.content input:visible:first").focus(); 
+
   $("#severity_selector, #facility_selector").change(function() {
     $(".entry").show();
     $("#severity_selector, #facility_selector").each(function(index) { check_filter($(this).val()); });
