@@ -4,10 +4,10 @@
 
 %h2
   = link_to 'Download config file', config_file_path(application.api_key)
-  to the "config" directory or just do
+  to the "config" directory or just do (from your app's root directory)
 
 %code
-  = "wget #{config_file_url(application.api_key)}"
+  = "wget #{config_file_url(application.api_key)} -O config/logbook.yml"
 
 %h2
   All set! Start using it,
