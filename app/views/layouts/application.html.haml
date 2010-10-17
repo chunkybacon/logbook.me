@@ -19,12 +19,12 @@
               %li
                 %a{:href => "/users/edit"}= current_user.display_name 
               %li
-                = link_to(t("web-app-theme.logout", :default => "Logout"), destroy_user_session_path, :class => 'logout' )
+                = link_to(t("web-app-theme.logout", :default => "Log out"), destroy_user_session_path, :class => 'logout' )
             - else
               %li
-                = link_to_unless_current(t('signup', :default => "Signup"), new_user_registration_path)
+                = link_to_unless_current(t('signup', :default => "Sign up"), new_user_registration_path)
               %li
-                = link_to_unless_current(t("web-app-theme.login", :default => "Login"), new_user_session_path)
+                = link_to_unless_current(t("web-app-theme.login", :default => "Log in"), new_user_session_path)
         #main-navigation
           %ul.wat-cf
             %li
