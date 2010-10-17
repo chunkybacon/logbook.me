@@ -1,9 +1,14 @@
-%h2 Forgot your password?
-= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
-  = devise_error_messages!
-  %p
-    = f.label :email
-    %br/
-    = f.text_field :email
-  %p= f.submit "Send me reset password instructions"
-= render :partial => "devise/shared/links"
+#box
+  #block-signup.block
+    %h2 Forgot your password?
+    .content
+      %br/
+      = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "form" }) do |f|
+        = devise_error_messages!
+        %p
+          = f.label :email, :class => "label"
+          = f.text_field :email, :class => "text_field"
+        .group.navform.wat-cf
+          %button.button{:type => 'submit'}
+            =image_tag('web-app-theme/icons/tick.png', :alt => "Send me reset password instructions")
+            Send me reset password instructions
