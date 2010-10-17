@@ -10,7 +10,7 @@ class Application < ActiveRecord::Base
   before_create :generate_api_key
 
   # Validations
-  validates_presence_of :name
+  validates_presence_of :name, :time_zone
 
 
   private
