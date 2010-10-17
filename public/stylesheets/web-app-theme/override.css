@@ -17,11 +17,9 @@ abbr[title], acronym[title] {
 }
 
 a { 
-	text-decoration: none;
-}
-a:hover {
 	text-decoration: underline;
 }
+
 /* @group Entries Table */
 
 td.severity, td.facility, td.timestamp {
