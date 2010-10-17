@@ -1,16 +1,8 @@
 %div#filters
-  %span Filters:
-  %label{:for => "severity_selector"} Severity:
-  %select#severity_selector{:name => "severity_selector"}
-    %option{:value => "all"} All
-    = Entry::SEVERITY_TYPES.each do |severity|
-      %option{:value => "#{severity}"}= severity
-
-  %label{:for => "facility_selector"} Facility:
-  %select#facility_selector{:name => "facility_selector"}
-    %option{:value => "all"} All
-    = @facilities.each do |facility|
-      %option{:value => "#{facility}"}= facility
+  = simple_form_for @filter, :url => application_entries_path(@application), :html => { :method => :get } do |f|
+    = f.input :severity, :collection => Entry::SEVERITY_TYPES.each
+    = f.input :facility, :collection => @facilities
+    = f.button :submit
 
 = will_paginate @entries
 
