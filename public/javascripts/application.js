@@ -2,8 +2,6 @@ $(function() {
   /*Automagically set focus on first input on page*/
   $("div.content input:visible:first").focus(); 
 
-  $("tbody > tr:nth-child(odd)").addClass("odd");
-
   $('#filters form').submit(function(event) {
     event.preventDefault();
     var form = $(this);
@@ -12,7 +10,7 @@ $(function() {
     });
   });
 
-  $('.pagination a').click(function(event) {
+  $('.pagination a').live('click', function(event) {
     event.preventDefault();
     $.get($(this).attr('href'), function(response) {
       $('#entries').html(response);

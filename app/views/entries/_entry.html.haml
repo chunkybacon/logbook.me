@@ -1,4 +1,4 @@
-%tr{:class => "entry #{entry.severity} #{entry.facility}"}
+%tr{:class => "#{cycle(:odd, :even)} entry #{entry.severity} #{entry.facility}"}
   %td.severity
     = entry.severity
   %td.facility

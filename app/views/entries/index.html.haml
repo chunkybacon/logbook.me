@@ -1,8 +1,14 @@
-%div#filters
-  = simple_form_for @filter, :url => application_entries_path(@application), :html => { :method => :get } do |f|
-    = f.input :severity, :collection => Entry::SEVERITY_TYPES.each
-    = f.input :facility, :collection => @facilities
-    = f.button :submit
+#block-tables.block
+  .content
+    %h2.title Log Entries
+    .inner
 
-#entries
-  = render :partial => 'entries', :locals => { :entries => @entries }
+      #entries
+        = render :partial => 'entries', :locals => { :entries => @entries }
+
+- content_for :sidebar do
+  %div#filters
+    = simple_form_for @filter, :url => application_entries_path(@application), :html => { :method => :get } do |f|
+      = f.input :severity, :collection => Entry::SEVERITY_TYPES.each
+      = f.input :facility, :collection => @facilities
+      = f.button :submit
