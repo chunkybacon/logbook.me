@@ -31,4 +31,14 @@ $(function() {
        });
     }
   });
+
+  $('#entries_filter_time_frame').live('change', function() {
+    if ($(this).val() == 'Custom') {
+      $('.date_field').show();
+    } else {
+      $('.date_field').hide();
+    }
+  });
+
+  $('input.dateinput').dateinput();
 });

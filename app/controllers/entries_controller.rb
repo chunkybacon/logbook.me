@@ -7,6 +7,8 @@ class EntriesController < ApplicationController
   def index
     @filter = EntriesFilter.new(params[:entries_filter])
     @application = current_user.applications.find(params[:application_id])
+    Time.zone = @application.time_zone
+
     @entries = Entry.where(@filter.conditions.merge(:application_id => @application.id)).
                      order_by(:timestamp).
                      paginate(:page => params[:page], :per_page => 20)

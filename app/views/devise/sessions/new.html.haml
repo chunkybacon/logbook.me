@@ -5,11 +5,9 @@
       = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form login'}) do |f|
         %p
           = f.label :email, :class => 'label'
-          %br/
           = f.text_field :email, :class => 'text_field'
         %p
           = f.label :password, :class => 'label'
-          %br/
           = f.password_field :password, :class => 'text_field'
         - if devise_mapping.rememberable?
           %p
