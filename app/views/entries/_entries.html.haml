@@ -1,0 +1,12 @@
+%table.table
+  %thead
+    %tr
+      %th Severity
+      %th Facility
+      %th Timestamp
+      %th Payload
+  %tbody
+    = render entries
+
+.actions-bar.wat-cf
+  = will_paginate entries

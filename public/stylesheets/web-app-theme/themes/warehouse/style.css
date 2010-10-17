@@ -217,7 +217,7 @@ hr {
 
 /* pagination */
 
-.pagination a, .pagination span {
+.pagination a, .pagination span, .pagination em {
   background-color: #f4f4f4;
   background-image: url("images/button-background.png");
   color: #111;
@@ -229,9 +229,8 @@ hr {
 }
 
 .pagination em {
-  background: #002134;
-  color: #fff;
-  border: 1px solid #002134;
+  background-image: url("images/button-background-active.png");
+  font-style: normal;
 }
 
 .pagination a {
@@ -437,7 +436,7 @@ ul.list li .item .avatar {
   border-top-right-radius: 9px;
 }
 
-a.button, button.button, .pagination a, .pagination span {
+a.button, button.button, .pagination a, .pagination span, .pagination em {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;

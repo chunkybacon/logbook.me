@@ -1,24 +1,23 @@
 $(function() {
-
-  $("tbody > tr:nth-child(odd)").addClass("odd");
-
-  function check_filter(value) {
-    if (value != "all") {
-      $(".entry").not("." + value).hide();
-    }
-  }
-
   /*Automagically set focus on first input on page*/
   $("div.content input:visible:first").focus(); 
 
-  $("#severity_selector, #facility_selector").change(function() {
-    $(".entry").show();
-    $("#severity_selector, #facility_selector").each(function(index) { check_filter($(this).val()); });
-    $("tr.entry").removeClass("odd");
-    $("tr.entry:visible").filter(":odd").addClass("odd");
+  $('#filters form').submit(function(event) {
+    event.preventDefault();
+    var form = $(this);
+    $.get(form.attr('action'), form.serialize(), function(response) {
+      $('#entries').html(response);
+    });
   });
 
-  $('.entry').click(function(event) {
+  $('.pagination a').live('click', function(event) {
+    event.preventDefault();
+    $.get($(this).attr('href'), function(response) {
+      $('#entries').html(response);
+    });
+  });
+
+  $('.entry').live('click', function(event) {
     var bodies = $(this).find(".payload, .timestamp_body");
     var heads  = $(this).find(".payload_head, .timestamp_head");
 

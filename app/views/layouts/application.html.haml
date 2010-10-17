@@ -26,7 +26,7 @@
           %ul.wat-cf
             %li
               %a{:href => "/"}= t("web-app-theme.settings", :default => "Dashboard")
-      #wrapper.wat-cf.clearfix
+      #wrapper.wat-cf
         .flash
           - flash.each do |type, message|
             %div{:class => "message #{type}"}
@@ -34,10 +34,10 @@
         #main
           = yield
 
+          #footer
+            .block
+              %p
+                Copyright &copy; #{Time.now.year} Logbook
+
         #sidebar
           = yield :sidebar
-
-    #footer
-      .block
-        %p
-          Copyright &copy; #{Time.now.year} Logbook
