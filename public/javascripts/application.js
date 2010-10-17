@@ -31,6 +31,5 @@ $(function() {
          bodies.fadeIn("fast");
        });
     }
-
   });
 });

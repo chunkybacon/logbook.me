@@ -12,7 +12,7 @@
     = @facilities.each do |facility|
       %option{:value => "#{facility}"}= facility
 
-= paginate(@pages, params[:page])
+= will_paginate @entries
 
 %table#entries
   %thead
@@ -24,4 +24,4 @@
   %tbody
     = render @entries
 
-= paginate(@pages, params[:page])
+= will_paginate @entries
