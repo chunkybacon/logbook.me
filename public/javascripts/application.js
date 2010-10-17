@@ -28,6 +28,5 @@ $(function() {
          bodies.fadeIn("fast");
        });
     }
-
   });
 });
