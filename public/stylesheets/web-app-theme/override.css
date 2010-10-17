@@ -8,7 +8,10 @@ body {
 	font-size: 14px;
 }
 #logo {
-  font-family: 24px 'PT+Sans';
+	font-family: 24px 'PT Sans';
+}
+.hidden {
+  display: none;
 }
 
 #main {
