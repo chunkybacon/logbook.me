@@ -19,4 +19,7 @@
           %button.button{:type => 'submit'}
             =image_tag('web-app-theme/icons/key.png', :alt => 'Sign in')
             Sign in
-= render :partial => "devise/shared/links"
+        .group
+          - if devise_mapping.recoverable? && controller_name != 'passwords'
+            = link_to "Forgot your password?", new_password_path(resource_name)
+
