@@ -1,4 +1,4 @@
-= simple_form_for(@application) do |f|
+= simple_form_for @application, :html => { :class => "form" } do |f|
   - if @application.errors.any?
     #error_explanation
       %h2
@@ -8,11 +8,8 @@
       %ul
       - @application.errors.full_messages.each do |msg|
         %li= msg
+  %p
+    = f.input :name, :input_html => { :class => 'text_field' }, :label_html => { :class => "label" }
 
-  .inputs
-    -# = f.association :user
-    = f.input :name
-    -# = f.input :api_key
-
-  .actions
+  .group.navform.wat-cf 
     = f.button :submit

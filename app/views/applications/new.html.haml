@@ -1,3 +1,6 @@
-%h1= t '.title'
-%p= link_to t('back'), applications_path
-= render 'form'
+#box
+  .block
+    %h2= t '.title'
+    .content
+      = render 'form'
+      %p= link_to t('back'), applications_path
