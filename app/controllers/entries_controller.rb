@@ -8,17 +8,17 @@ class EntriesController < ApplicationController
     @filter = EntriesFilter.new(params[:entries_filter])
     @application = current_user.applications.find(params[:application_id])
     Time.zone = @application.time_zone
+    criteria = Entry.where(:application_id => @application.id)
+    if criteria.count == 0
+      render :no_entries unless request.xhr?
+    else
+      @entries = criteria.where(@filter.conditions).
+        order_by(:timestamp).
+        paginate(:page => params[:page], :per_page => 20)
 
-    @entries = Entry.where(@filter.conditions.merge(:application_id => @application.id)).
-                     order_by(:timestamp).
-                     paginate(:page => params[:page], :per_page => 20)
-
-    if @entries.empty? && @filter.conditions.empty?
-      render :no_entries && return
-    end
-
-    if request.xhr?
-      render :partial => 'entries', :locals => { :entries => @entries }
+      if request.xhr?
+        render :partial => 'entries', :locals => { :entries => @entries }
+      end
     end
   end
 
