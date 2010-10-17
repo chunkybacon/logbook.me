@@ -256,24 +256,36 @@ td.empty_table {
 	margin-left: 50px;
 }
 
-/* @group Menu */
 
+/* @group Pagination */
+  .pagination a, .pagination span, .pagination em {
+    padding: .2em .5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+   }
 
-#submenu {
-	height: 30px;
-}
+  .pagination span.disabled {
+    color: #999;
+    border: 1px solid #DDD;
+   }
 
-#submenu ul {
-	list-style-type: none;
-	float: right;
-}
+  .pagination em {
+    font-weight: bold;
+    background: #2E6AB1;
+    color: white;
+    border: 1px solid #2E6AB1;
+   }
 
-#submenu ul li {
-	float: left;
-	border: 1px solid #B3B3B3;
-	background-color: #F3F3F3;
-	margin-right: 5px;
-	padding: 2px 10px;
-}
+  .pagination a {
+    text-decoration: none;
+    color: #105CB6;
+    border: 1px solid #9AAFE5; 
+  }
+
+  .pagination a:hover, .pagination a:focus {
+    color: #003;
+    border-color: #003;
+   }
 
 /* @end */

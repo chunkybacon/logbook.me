@@ -4,7 +4,8 @@ class Entry
   field :application_id, :type => Integer
   field :severity
   field :facility
-  field :payload, :type => Hash
+  field :payload,        :type => Hash
+  field :timestamp,      :type => DateTime
 
   # Constants
   SEVERITY_TYPES = ["fatal", "error", "warn", "info", "debug"]

@@ -19,10 +19,15 @@ $(function() {
     var bodies = $(this).find(".payload, .timestamp_body");
     var heads  = $(this).find(".payload_head, .timestamp_head");
 
-    if($(bodies[1]).html().length > 80) {
-      heads.toggle();
-      bodies.slideToggle();
-      bodies.toggleClass("selected");
+    if ($(heads[0]).css("display") == "none") {
+      bodies.fadeOut("fast", function() {
+        heads.fadeIn("fast");
+      });
+    } else {
+       heads.fadeOut("fast", function() {;
+         bodies.fadeIn("fast");
+       });
     }
+
   });
 });

@@ -12,6 +12,8 @@
     = @facilities.each do |facility|
       %option{:value => "#{facility}"}= facility
 
+= paginate(@pages, params[:page])
+
 %table#entries
   %thead
     %tr
@@ -26,3 +28,5 @@
       %tr
         %td.empty_table{:colspan => 4}
           Nothing here now!
+
+= paginate(@pages, params[:page])
