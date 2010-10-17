@@ -147,6 +147,15 @@ td.payload .close {
   text-decoration: none;
 }
 
+td.payload .key {
+  /* color: #666; */
+  font-weight: bold;
+}
+
+td.payload .body {
+  line-height: 140%;
+}
+
 #main.entries {
 	width: 71%;
 	float: left;

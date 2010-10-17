@@ -8,7 +8,7 @@
       = entry.timestamp.strftime("%d %b, %H:%M")
     %div.body= l(entry.timestamp)
   %td.payload
-    %div.head= truncate(entry.payload.inspect, :length => 80)
+    %div.head= truncate(simple_human_friendly_payload(entry.payload), :length => 80)
     %div.body
-      = entry.payload.inspect.gsub(",", ",<br />").html_safe
+      = human_friendly_payload(entry.payload).html_safe
       = link_to 'Close', '#', :class => 'close'
