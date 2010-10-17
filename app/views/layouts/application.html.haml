@@ -31,7 +31,7 @@
           - flash.each do |type, message|
             %div{:class => "message #{type}"}
               %p= message
-        #main
+        #main{:class => controller_name}
           = yield
 
           #footer
