@@ -42,136 +42,250 @@ body > #container {
 
 /* @end */
 
+/* @group Tables Zebra */
+
+table.zebra {
+	vertical-align: top;
+	left: 0px;
+	top: 0px;
+	font: 12px Arial, Helvetica, Geneva, sans-serif;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+table.zebra th {
+	height: 30px;
+	border-bottom: 2px solid #333;
+	padding: 0;
+	margin: 0;
+	background-color: #666;
+	font-weight: normal;
+	font-style: normal;
+	color: #fff;
+}
+
+table.zebra td {
+	height: 25px;
+	border-bottom: 1px solid #b3b3b3;
+	margin: 0;
+	padding: 0 5px;
+}
+
+table.zebra tr.odd {
+	background-color: #f3f3f3;
+}
+
+table.zebra tr.even {
+	background-color: #fbfbfb;
+}
+
+table.zebra th.small {
+	width: 60px;
+}
+
+table.zebra th.medium {
+	width: 100px;
+}
+
+table.zebra th.icon {
+	width: 25px;
+	padding: 0 1px;
+}
+
+tr.header a {
+	text-decoration: underline;
+	color: #fff;
+}
+
+tr.header a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+
+td.top {
+	vertical-align: top;
+	left: 0px;
+	top: 0px;
+}
+
+td.top_middle {
+	vertical-align: top;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+}
+
+td.middle {
+	text-align: center;
+}
+
+/* @end */
+
 #header {
-  height: 163px;
-  background: #232c30 url('/images/header_bg.gif') left repeat-x;
-  border-bottom: 1px solid #232c30;
+	height: 163px;
+	background: #232c30 url('/images/header_bg.gif') left repeat-x;
+	border-bottom: 1px solid #232c30;
 }
 
 #header #logbook {
-  margin-left: -20px;
-  float: left;
+	margin-left: -20px;
+	float: left;
 }
 
 #header h1 {
-  margin: 30px 0 0 0;
-  padding: 10px 0;
-  float: right;
-  font-size: 26px;
+	margin: 30px 0 0 0;
+	padding: 10px 0;
+	float: right;
+	font-size: 26px;
 }
 
 #user-navigation {
-  position: absolute;
-  top: 70px;
-  right: 10px;
+	position: absolute;
+	top: 70px;
+	right: 10px;
 }
 
 #main {
-  float: none;
-  margin-left:auto;
-  margin-right:auto;
-  width: 1000px;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
 }
 
 .hidden {
-  display: none;
+	display: none;
 }
 
 #filters {
-  background-color: #CDC7C5;
-  padding: 5px;
-  margin-left: 7px;
-  width: 978px;
+	background-color: #CDC7C5;
+	padding: 5px;
+	margin-left: 7px;
+	width: 978px;
 }
 
 #filters span {
-  font-size: 1.3em;
-  display: block;
+	font-size: 1.3em;
+	display: block;
 }
 
 #filters label {
-  padding-left: 5px;
+	padding-left: 5px;
 }
 
 table#entries {
-  margin-top: 10px;
-  padding: 5px;
-  width: 1000px;
+	margin-top: 10px;
+	padding: 5px;
+	width: 1000px;
 }
 
 table#entries th {
-  padding: 5px;
+	padding: 5px;
 }
 
 table#entries tbody {
-  vertical-align: top;
+	vertical-align: top;
 }
 
 table#entries td {
- padding: 5px;
+	padding: 5px;
 }
 
 table#entries td.severity, td.facility, td.timestamp {
-  width: 15%;
-  text-align: center;
-  font-family: 'Verdana', sans-serif;
+	width: 15%;
+	text-align: center;
+	font-family: 'Verdana', sans-serif;
 }
 
 td.severity {
-  font-weight: bold;
-  font-size: 1.2em;
+	font-weight: bold;
+	font-size: 1.2em;
 }
 
 td.facility {
-  font-style: italic;
+	font-style: italic;
 }
 
 .selected {
-  font-size: 1.3em;
-  line-height: 120%; 
+	font-size: 1.3em;
+	line-height: 120%;
 }
 
-.selected.timestamp_body  {
-  font-size: 1.1em;
+.selected.timestamp_body {
+	font-size: 1.1em;
 }
 
 tr.error td.severity {
-  color: #780712;
+	color: #780712;
 }
 
 tr.info td.severity {
-  color: green;
+	color: green;
 }
 
 tr.debug td.severity {
-  color: blue;
+	color: blue;
 }
 
 tr.warn td.severity {
-  color: #DE8509;
+	color: #DE8509;
 }
 
 tr.fatal td.severity {
-  color: #FE011A;
+	color: #FE011A;
 }
 
 table#entries td.payload_body {
-  width: 70% ;
-  font-family: 'Courier New', monospace;
+	width: 70%;
+	font-family: 'Courier New', monospace;
 }
 
 tr.odd {
-  background: #D8DEF1;
+	background: #D8DEF1;
 }
 
 td.empty_table {
-  text-align: center;
-  font-weight: 120%;
-  font-size: 1.5em;
+	text-align: center;
+	font-weight: 120%;
+	font-size: 1.5em;
 }
 
 #box ol {
-  font-size: 20px;
-  line-height: 30px;
-  margin-left: 50px;
+	font-size: 20px;
+	line-height: 30px;
+	margin-left: 50px;
 }
+
+
+/* @group Pagination */
+  .pagination a, .pagination span, .pagination em {
+    padding: .2em .5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+   }
+
+  .pagination span.disabled {
+    color: #999;
+    border: 1px solid #DDD;
+   }
+
+  .pagination em {
+    font-weight: bold;
+    background: #2E6AB1;
+    color: white;
+    border: 1px solid #2E6AB1;
+   }
+
+  .pagination a {
+    text-decoration: none;
+    color: #105CB6;
+    border: 1px solid #9AAFE5; 
+  }
+
+  .pagination a:hover, .pagination a:focus {
+    color: #003;
+    border-color: #003;
+   }
+
+/* @end */

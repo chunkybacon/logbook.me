@@ -7,7 +7,7 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 #
 #
-u   = User.create(:email => "test@logbook.me", :password => "123456", :password_confirmation => "123456")
+u   = User.find_or_create_by_email(:email => "test@logbook.me", :password => "123456", :password_confirmation => "123456")
 app = u.applications.create(:name => "Test App")
 FACILITIES = %w(important geocode kitchen server garage web)
 
