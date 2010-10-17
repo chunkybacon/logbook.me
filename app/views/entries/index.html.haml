@@ -5,13 +5,12 @@
     %option{:value => "all"} All
     = Entry::SEVERITY_TYPES.each do |severity|
       %option{:value => "#{severity}"}= severity
-    end
+
   %label{:for => "facility_selector"} Facility:
   %select#facility_selector{:name => "facility_selector"}
     %option{:value => "all"} All
     = @facilities.each do |facility|
       %option{:value => "#{facility}"}= facility
-    end
 
 %table#entries
   %thead
@@ -21,4 +20,9 @@
       %th Timestamp
       %th Payload
   %tbody
-    = render @entries
+    - if @entries.present?
+      = render @entries
+    - else
+      %tr
+        %td.empty_table{:colspan => 4}
+          Nothing here now!
