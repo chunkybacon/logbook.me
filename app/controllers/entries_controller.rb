@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
     @filter = EntriesFilter.new(params[:entries_filter])
     @application = current_user.applications.find(params[:application_id])
     @entries = Entry.where(@filter.conditions.merge(:application_id => @application.id)).
-                     order_by(:created_at).
+                     order_by(:timestamp).
                      paginate(:page => params[:page], :per_page => 20)
 
     if @entries.empty? && @filter.conditions.empty?
