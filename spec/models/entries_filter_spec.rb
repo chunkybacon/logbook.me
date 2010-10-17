@@ -26,6 +26,11 @@ describe EntriesFilter do
       subject.conditions.should be_blank
     end
 
+    it 'should convert facility to regexp' do
+      @params = { :facility => 'test' }
+      subject.conditions.should == { :facility => /test/ }
+    end
+
     context 'when interpeting timeframe' do
       it 'should set timestamp to beginning of today if timeframe is today' do
         @params = { :time_frame => 'Today' }

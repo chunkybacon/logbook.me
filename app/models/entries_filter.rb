@@ -14,7 +14,7 @@ class EntriesFilter
   def conditions
     result = {}
     result[:severity] = severity if severity.present?
-    result[:facility] = facility if facility.present?
+    result[:facility] = %r{#{facility}} if facility.present?
     handle_time_frame(result)
     handle_payload(result)
     result
