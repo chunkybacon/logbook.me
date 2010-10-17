@@ -140,3 +140,4 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :twitter_oauth
   # end
 end
+Devise::SessionsController.ssl_required :new, :create
