@@ -11,14 +11,14 @@
         %thead
           %tr
             %th= Application.human_attribute_name :name
-            %th= Application.human_attribute_name :api_key
+            %th Config file
             %th.last
-  
+
         %tbody
           - for application in @applications
             %tr{ :class => cycle(:odd, :even) }
               %td.action= link_to application.name, application_entries_path(application)
-              %td= link_to 'Config file', config_file_path(application.api_key)
+              %td= link_to 'Download', config_file_path(application.api_key)
               %td.last
                 = link_to t('edit', :default => "Edit"), edit_application_path(application)
                 = link_to t('destroy', :default => "Destroy"), application, :confirm => t('are_you_sure', :default => "Are you sure"), :method => :delete
