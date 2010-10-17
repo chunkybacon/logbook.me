@@ -1,7 +1,8 @@
 class EntriesFilter
   extend ActiveModel::Naming
 
-  attr_accessor :severity, :facility
+  attr_accessor :severity, :facility,
+    :time_frame, :time_from, :time_to
 
   def initialize(params = {})
     (params || {}).each do |key, value|
@@ -13,6 +14,7 @@ class EntriesFilter
     result = {}
     result[:severity] = severity if severity.present?
     result[:facility] = facility if facility.present?
+    handle_time_frame(result)
     result
   end
 
@@ -38,4 +40,22 @@ class EntriesFilter
   def persisted?
     false
   end
+
+  private
+
+    def handle_time_frame(result)
+      case time_frame
+        when 'Today'
+          result[:timestamp] = { "$gte" => Time.zone.now.beginning_of_day }
+        when 'Yesterday'
+          result[:timestamp] = {
+            "$gte" => 1.day.ago.utc.beginning_of_day,
+            "$lt" => Time.zone.now.beginning_of_day 
+          }
+        when 'Custom'
+          result[:timestamp] = {}
+          result[:timestamp]['$gte'] = Time.zone.parse(time_from) if time_from.present?
+          result[:timestamp]['$lte'] = Time.zone.parse(time_to) if time_to.present?
+      end
+    end
 end

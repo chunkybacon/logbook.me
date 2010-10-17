@@ -1,11 +1,11 @@
 /* @group Reset */
 abbr[title], acronym[title] {
-  border: none;    
+  border: none;
 }
 /* end */
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 #main {
@@ -15,23 +15,14 @@ abbr[title], acronym[title] {
 	margin-left: auto;
 	float: none;
 }
+
+a { 
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
 /* @group Entries Table */
-
-#filters {
-	background-color: #CDC7C5;
-	padding: 5px;
-	margin-left: 7px;
-	width: 978px;
-}
-
-#filters span {
-	font-size: 1.3em;
-	display: block;
-}
-
-#filters label {
-	padding-left: 5px;
-}
 
 td.severity, td.facility, td.timestamp {
 	width: 15%;
@@ -85,6 +76,38 @@ td.payload_body {
 #main.entries {
 	width: 71%;
 	float: left;
+}
+
+/* @end */
+
+/* @group Filters */
+
+#filters form {
+  margin: 15px 0;
+}
+
+#filters form .input, #filters form .button {
+  margin: 10px 0;
+}
+
+#filters form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+#filters input, #filters select {
+  font-size: 14px;
+  padding: 2px 3px;
+}
+
+#filters input.date {
+  width: 100px;
+  text-align: center;
+}
+
+#filters .date_field {
+  display: none
 }
 
 /* @end */
