@@ -1,9 +1,11 @@
 require 'bundler/capistrano'
+require 'capistrano/ext/multistage' rescue 'YOU NEED TO INSTALL THE capistrano-ext GEM'
+
+set :default_stage, "dev"
 
 set :use_sudo, false
 
 set :application, "logbook.me"
-set :repository,  "git@github.com:railsrumble/rr10-team-73.git"
 
 set :user, :logbook
 set :scm, :git
@@ -11,10 +13,6 @@ set :deploy_via, :remote_cache
 set :git_enable_submodules, false
 set :use_sudo, false
 set :branch, :master
-
-role :web, "logbook.me"                          # Your HTTP server, Apache/etc
-role :app, "logbook.me"                          # This may be the same as your `Web` server
-role :db,  "logbook.me", :primary => true        # This is where Rails migrations will run
 
 set :deploy_to, "/var/www/#{application}"
 
