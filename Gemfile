@@ -49,11 +49,10 @@ end
 # and rake tasks are available in development mode:
 group :development, :test do
   gem "faker"
-end
-
-group :test do
   gem 'rspec-rails'
   gem 'machinist'
   gem 'database_cleaner'
   gem 'fabrication'
+  gem 'steak', '>= 1.0.0.rc.1'
+  gem 'capybara'
 end
