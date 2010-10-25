@@ -10,5 +10,5 @@
   %td.payload
     %div.head= truncate(simple_human_friendly_payload(entry.payload), :length => 80)
     %div.body
-      = human_friendly_payload(entry.payload)
+      = human_friendly_payload(entry.payload).html_safe
       = link_to 'Close', '#', :class => 'close'
