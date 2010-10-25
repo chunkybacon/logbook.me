@@ -12,11 +12,9 @@ class Application < ActiveRecord::Base
   # Validations
   validates_presence_of :name, :time_zone
 
-
   private
 
   def generate_api_key
     self.api_key = UUIDTools::UUID.random_create.to_s
   end
-
 end

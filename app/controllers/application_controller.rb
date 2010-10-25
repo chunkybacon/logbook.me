@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
   include SslRequirement
 
   def after_sign_in_path_for(resource_or_scope)
-    resource_or_scope.applications.count > 1 ? root_url : application_entries_path(resource_or_scope.applications.first)
+    resource_or_scope.applications.count == 1 ?
+      application_entries_path(resource_or_scope.applications.first) :
+      root_path
   end
-
 end

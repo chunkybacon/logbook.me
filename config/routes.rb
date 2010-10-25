@@ -8,7 +8,7 @@ Logbook::Application.routes.draw do
   end
 
   resources :config_files, :only => :show
-  resources :entries, :except => :index
+  resources :entries, :only => :create
 
   root :to => "sites#index"
 end
