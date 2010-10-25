@@ -4,7 +4,9 @@ module ApplicationHelper
   end
 
   def human_friendly_payload(hash)
-    hash.map { |el| "<span class='key'>#{el.first}</span>: <span class='value'>#{el.last}</span>" }.
-      join(',<br />')
+    hash.map do |el|
+      content_tag(:span, el.first, :class => "key"  ) + ": " +
+      content_tag(:span, el.last,  :class => "value")
+    end.join(',<br />')
   end
 end

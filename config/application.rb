@@ -39,11 +39,6 @@ module Logbook
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
-    # HAML views
-    config.generators do |g|
-      g.template_engine :haml
-    end
-
     # Javascript settings
     config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery-ui.min rails)
   end
