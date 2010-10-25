@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/indirect/haml-rails.git
+  revision: 1cf2a7e56b5f74e7562b2779e2686b6b0bf64c65
+  tag: v0.3.4
+  specs:
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
+
+GIT
   remote: git://github.com/indirect/jquery-rails.git
   revision: e0767e318a54f4bbe46b4e2ee0f35ef2f2fb2c27
   tag: v0.2.3
@@ -184,6 +195,7 @@ DEPENDENCIES
   fabrication
   faker
   haml
+  haml-rails!
   hpricot
   inherited_resources!
   jquery-rails!
