@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016142521) do
+ActiveRecord::Schema.define(:version => 20101027141551) do
 
   create_table "applications", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(:version => 20101016142521) do
   end
 
   add_index "entries", ["application_id"], :name => "index_entries_on_application_id"
+
+  create_table "invites", :force => true do |t|
+    t.integer  "application_id", :null => false
+    t.string   "email",          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "invites", ["application_id"], :name => "index_invites_on_application_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
