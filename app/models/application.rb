@@ -1,8 +1,10 @@
 class Application < ActiveRecord::Base
   # Associations
-  belongs_to :user
-  has_many   :entries
-  has_many   :invites
+  has_many :application_memberships
+  has_many :users, :through => :application_memberships
+  has_one  :owner, :through => :application_memberships, :conditions => { :owner => true }
+  has_many :entries
+  has_many :invites
 
   # Attributes
   attr_accessible :name, :time_zone

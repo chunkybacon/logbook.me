@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :applications_attributes
 
   # Associations
-  has_many :applications, :dependent => :destroy
+  has_many :application_memberships
+  has_many :applications, :through => :application_memberships
   accepts_nested_attributes_for :applications
 
   # Validations

@@ -10,10 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101027141551) do
+ActiveRecord::Schema.define(:version => 20101027151205) do
+
+  create_table "application_memberships", :force => true do |t|
+    t.integer  "application_id",                    :null => false
+    t.integer  "user_id",                           :null => false
+    t.boolean  "owner",          :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "application_memberships", ["application_id"], :name => "index_application_memberships_on_application_id"
+  add_index "application_memberships", ["user_id"], :name => "index_application_memberships_on_user_id"
 
   create_table "applications", :force => true do |t|
-    t.integer  "user_id",    :null => false
     t.string   "name",       :null => false
     t.string   "api_key",    :null => false
     t.datetime "created_at"
@@ -22,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20101027141551) do
   end
 
   add_index "applications", ["api_key"], :name => "index_applications_on_api_key", :unique => true
-  add_index "applications", ["user_id"], :name => "index_applications_on_user_id"
 
   create_table "entries", :force => true do |t|
     t.integer  "application_id", :null => false

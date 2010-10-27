@@ -12,7 +12,6 @@ User.blueprint do
 end
 
 Application.blueprint do
-  user
   name
   time_zone { 'Moscow' }
 end
