@@ -24,8 +24,8 @@ en:
       back    : back
 
     edit:
-      title   : Editing application
-      show    : show
+      title   : Application Settings
+      users   : People who have access
       back    : back
 
     show:

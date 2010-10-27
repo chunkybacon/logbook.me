@@ -5,3 +5,7 @@ en:
   back: Back
   edit: Edit
   actions: Actions
+  helpers:
+    submit:
+      invite:
+        create: "Invite this person"

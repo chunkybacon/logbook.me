@@ -5,6 +5,7 @@ Logbook::Application.routes.draw do
 
   resources :applications do
     resources :entries, :only => :index
+    resources :invites, :only => :create
   end
 
   resources :config_files, :only => :show

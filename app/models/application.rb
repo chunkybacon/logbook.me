@@ -2,6 +2,7 @@ class Application < ActiveRecord::Base
   # Associations
   belongs_to :user
   has_many   :entries
+  has_many   :invites
 
   # Attributes
   attr_accessible :name, :time_zone

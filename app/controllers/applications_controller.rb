@@ -11,11 +11,11 @@ class ApplicationsController < InheritedResources::Base
     update! do |success, failure|
       success.html { redirect_to applications_path }
     end
-  end  
-  
-  protected
-  def begin_of_association_chain
-    current_user
   end
 
+  protected
+
+    def begin_of_association_chain
+      current_user
+    end
 end
