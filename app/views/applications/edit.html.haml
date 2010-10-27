@@ -3,4 +3,9 @@
     %h2= t '.title'
     .content
       = render 'form'
+
+      %h3= t '.users'
+
+      = render 'invites/form', :application => @application, :invite => Invite.new
+
       %p= link_to t('back'), applications_path

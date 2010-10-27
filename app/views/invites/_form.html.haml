@@ -1,0 +1,6 @@
+= simple_form_for invite, :url => application_invites_path(application), :html => { :class => 'form' } do |f|
+  %p
+    = f.input :email, :input_html => { :class => 'text_field' }, :label_html => { :class => 'label' }
+
+  .group.navform.wat-cf
+    = f.button :submit
