@@ -2,7 +2,7 @@ class Application < ActiveRecord::Base
   # Associations
   has_many :application_memberships
   has_many :users, :through => :application_memberships
-  has_one  :owner, :through => :application_memberships, :conditions => { :owner => true }
+  has_one  :owner, :through => :application_memberships, :conditions => { 'application_memberships.owner' => true }, :source => :user
   has_many :entries
   has_many :invites
 
