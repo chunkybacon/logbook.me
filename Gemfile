@@ -55,4 +55,5 @@ group :development, :test do
   gem 'fabrication'
   gem 'steak', '>= 1.0.0.rc.1'
   gem 'capybara'
+  gem 'shoulda'
 end
