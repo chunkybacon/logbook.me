@@ -12,9 +12,13 @@ class Application < ActiveRecord::Base
   # Validations
   validates_presence_of :name, :time_zone
 
+  # Instance Methods
+
+  def to_s; name; end
+
   private
 
-  def generate_api_key
-    self.api_key = UUIDTools::UUID.random_create.to_s
-  end
+    def generate_api_key
+      self.api_key = UUIDTools::UUID.random_create.to_s
+    end
 end
