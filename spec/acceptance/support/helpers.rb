@@ -2,7 +2,7 @@ module HelperMethods
   def log_in_as(user)
     visit log_in_page
     fill_in 'Email', :with => user.email
-    fill_in 'Password', :with => user.password
+    fill_in 'Password', :with => 'password'
     click_button 'Sign in'
   end
 end

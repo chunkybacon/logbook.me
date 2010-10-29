@@ -6,6 +6,16 @@
 
       %h3= t '.users'
 
+      %ul
+        - @application.users.each do |user|
+          %li
+            = user.display_name
+            - if user == current_user
+              (that's you!)
+        - @application.invites.each do |invite|
+          %li
+            = invite.email
+
       = render 'invites/form', :application => @application, :invite => Invite.new
 
       %p= link_to t('back'), applications_path

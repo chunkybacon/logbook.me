@@ -6,8 +6,9 @@ feature "Invite User To An App", %q{
   I want to invite others
 } do
 
-  let(:user) { User.make }
-  let(:app) { Application.make(:user => user) }
+  let(:membership) { ApplicationMembership.make }
+  let(:user) { membership.user }
+  let(:app) { membership.application }
 
   background do
     log_in_as user
@@ -23,7 +24,33 @@ feature "Invite User To An App", %q{
       click_button 'Invite this person'
     end
 
+    page.should have_content('This person was invited')
+
     app.users.size.should == 2
     app.users.should include(user)
+  end
+
+  scenario "should invite new people" do
+    within(:css, 'form#new_invite') do
+      fill_in 'Email', :with => 'email@example.com'
+      click_button 'Invite this person'
+    end
+
+    page.should have_content('This person was invited')
+
+    app.users.size.should == 1
+    app.invites.size.should == 1
+    app.invites.first.email.should == 'email@example.com'
+  end
+
+  scenario "should validate invites" do
+    within(:css, 'form#new_invite') do
+      fill_in 'Email', :with => 'foo'
+      click_button 'Invite this person'
+    end
+
+    page.should have_no_content('This person was invited')
+    page.should have_content('We could not invite this person')
+    app.invites.should be_empty
   end
 end

@@ -15,3 +15,13 @@ Application.blueprint do
   name
   time_zone { 'Moscow' }
 end
+
+ApplicationMembership.blueprint do
+  application
+  user
+end
+
+Invite.blueprint do
+  application
+  email
+end

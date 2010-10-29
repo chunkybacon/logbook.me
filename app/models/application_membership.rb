@@ -9,6 +9,6 @@ class ApplicationMembership < ActiveRecord::Base
   private
 
     def mark_first_user_as_owner
-      self.owner = application.users.empty?
+      self.owner = true if application.users.empty?
     end
 end
